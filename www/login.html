@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户登录</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/login.css">
+</head>
+
+<body>
+    <!-- 顶部导航栏 -->
+    <div class="header_top">
+        <div class="w">
+            <ul class="left">
+                <li class="l2"><i></i><a href="">微信查价</a>
+                    <div class="l_img">
+                        <img src="./images/index/icon_wx_big.jpg" alt="">
+                        <p>微信扫描二维码，查药比价更方便！</p>
+                    </div>
+                </li>
+
+                <li class="l3"><i></i><a href="">手机APP</a>
+                    <div class="l_img">
+                        <img src="./images/index/icon_app_big.png" alt="">
+                        <p>新人首次注册安装，送20元优惠券礼包</p>
+                    </div>
+                </li>
+            </ul>
+            <ul class="right">
+                <li class="l3"><a href="">客服中心</a></li>
+                <li class="l4 hr">
+                    <a href="">网站导航</a><i></i>
+                    <div class="hr_box hr_nav">
+                        <dl class="hr_left">
+                            <dt>健康咨询</dt>
+                            <dd><a href="">医药资讯</a></dd>
+                            <dd><a href="">疾病知识</a></dd>
+                            <dd><a href="">用药指导</a></dd>
+                            <dd><a href="">健康问答</a></dd>
+                            <dd><a href="">在线问诊</a></dd>
+                        </dl>
+                        <dl class="hr_right">
+                            <dt>特色服务</dt>
+                            <dd><a href="">健康专题</a></dd>
+                            <dd><a href="">医院大全</a></dd>
+                            <dd><a href="">药房联盟</a></dd>
+                            <dd><a href="">商品分类</a></dd>
+                            <dd><a href="">品牌大全</a></dd>
+                            <dd><a href="">药品索引</a></dd>
+                        </dl>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="header w">
+        <a href="">
+            <h1 class="logo">药房网商城</h1>
+        </a>
+        <div class="sub"><span>用户登录</span></div>
+    </div>
+    <div class="setting">
+        <div class="login">
+            <div class="login_top">
+                <span>账号登录</span><span>快捷登录</span>
+            </div>
+            <label for="username">用户名：</label>
+            <input type="text" name="username" id="username"><br>
+            <label for="password">登录密码：</label>
+            <input type="text" name="password" id="password"><br>
+            <input type="checkbox" name="check" id="check">
+            <label for="check">七天免登录</label>
+            <input type="button" value="登录" id="btn">
+        </div>
+
+    </div>
+</body>
+<script src="./js/cookie.js"></script>
+<script>
+    const oUsername = document.getElementById('username');
+    const oPassword = document.getElementById('password');
+    const oCheck = document.getElementById('check');
+    const btn = document.getElementById('btn');
+    let c = document.cookie ? JSON.parse(getCookie("user")) : {
+        username: '',
+        password: ''
+    };
+    oUsername.value = c.username;
+    oPassword.value = c.password;
+
+    btn.onclick = function () {
+        if (oCheck.checked) {
+            document.cookie = "user=" + JSON.stringify({
+                username: oUsername.value,
+                password: oPassword.value
+            })
+        }
+
+    }
+</script>
+
+</html>
