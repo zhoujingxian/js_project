@@ -57,50 +57,92 @@
             </ul>
         </div>
     </div>
+    <!-- logo区域 -->
     <div class="header w">
         <a href="">
             <h1 class="logo">药房网商城</h1>
         </a>
         <div class="sub"><span>用户登录</span></div>
     </div>
+    <!-- 登录区域 -->
     <div class="setting">
         <div class="login">
             <div class="login_top">
-                <span>账号登录</span><span>快捷登录</span>
+                <span class="lt_color">账号登录</span><span>快捷登录</span>
             </div>
-            <label for="username">用户名：</label>
-            <input type="text" name="username" id="username"><br>
-            <label for="password">登录密码：</label>
-            <input type="text" name="password" id="password"><br>
-            <input type="checkbox" name="check" id="check">
-            <label for="check">七天免登录</label>
-            <input type="button" value="登录" id="btn">
+            <div class="login_item item">
+                <span>欢迎登录药房网商城</span>
+                <span>没有账号？<a href="">立即注册</a></span>
+            </div>
+            <!-- 用户名和密码 -->
+            <div class="form_input" style="display: none;">
+                <i></i>
+                <input type="text" id="username" placeholder="用户名/已验证邮箱或手机号" autocomplete="off"><br>
+                <i></i>
+                <input type="password" id="password" placeholder="登录密码" autocomplete="off">
+                <div class="forget">
+                    <input type="checkbox" name="check" id="check">
+                    <label for="check">记住用户名</label>
+                    <a href="">忘记密码？</a>
+                </div>
+            </div>
+            <div class="fast">
+                <input type="text" id="phone_number" placeholder="请输入手机号"><br>
+                <input type="text" id="auth_code" placeholder="请输入短信验证码">
+                <span>获取验证码</span>
+            </div>
+
+            <div id="title"><i></i><span></span></div>
+            <input type="button" id="submit" value="立即登录">
+            <div class="consent">
+                <input type="checkbox" name="xy" id="xy">
+                <label for="xy">我已阅读并同意药房网商城</label>
+                <a href="">《用户服务协议》</a><a href="">《隐私权政策》</a>
+            </div>
+            <div class="other">
+                <div class="item">使用其他方式登录：</div>
+                <div class="other_a">
+                    <a href=""></a>
+                    <a href=""></a>
+                    <a href=""></a>
+                    <a href=""></a>
+                </div>
+            </div>
         </div>
 
     </div>
+    <!-- 底部区域 -->
+    <div class="footer">
+        <div class="footer_box">
+            <ul>
+                <li><a href="">关于我们</a></li>
+                <li><a href="">资质证书</a></li>
+                <li><a href="">商家入驻</a></li>
+                <li><a href="">联系我们</a></li>
+                <li><a href="">工作机会</a></li>
+                <li><a href="">帮助中心</a></li>
+                <li><a href="">法律声明</a></li>
+                <li><a href="">网站地图</a></li>
+                <li><a href="">友情链接</a></li>
+                <li><a href="">在售商品</a></li>
+                <li><a href="">下架商品</a></li>
+                <li><a href="">商品索引</a></li>
+                <li><a href="">商品分类</a></li>
+                <li><a href="">热门搜索</a></li>
+            </ul>
+            <p class="p1">
+                <span>互联网药品交易服务资格证编号:<a href="">国A20110001</a></span>
+                <span>互联网药品信息服务资格证编号:<a href="">(沪)-经营性-2012-0003</a></span>
+                <span><a href="">ICP备案号：沪ICP备07012885号-1</a></span>
+                <span><img src="./images/index/gaba.png" alt=""><a href="">沪公网安备 31011502002155号</a></span>
+            </p>
+            <p>©2007-2021&nbsp;&nbsp;药房网商城版权所有&nbsp;&nbsp;上海伊邦医药信息科技股份有限公司</p>
+            <p>本网站用字经北京北大方正电子有限公司授权许可</p>
+
+        </div>
+    </div>
 </body>
 <script src="./js/cookie.js"></script>
-<script>
-    const oUsername = document.getElementById('username');
-    const oPassword = document.getElementById('password');
-    const oCheck = document.getElementById('check');
-    const btn = document.getElementById('btn');
-    let c = document.cookie ? JSON.parse(getCookie("user")) : {
-        username: '',
-        password: ''
-    };
-    oUsername.value = c.username;
-    oPassword.value = c.password;
-
-    btn.onclick = function () {
-        if (oCheck.checked) {
-            document.cookie = "user=" + JSON.stringify({
-                username: oUsername.value,
-                password: oPassword.value
-            })
-        }
-
-    }
-</script>
+<script src="./js/login.js"></script>
 
 </html>
