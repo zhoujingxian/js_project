@@ -1,0 +1,380 @@
+[{
+        "name": "盐酸雷尼替丁胶囊",
+        "spec": "0.15gx30粒/瓶",
+        "firm": "苏州弘森药业股份有限公司",
+        "type": "胶囊剂",
+        "price": "¥4.50",
+        "img": "./images/list/list0.jpg",
+        "icon": "./images/list/list_icon0.jpg"
+    },
+    {
+        "name": "亚宝 丁桂儿脐贴",
+        "spec": "1.6gx3贴/盒",
+        "firm": "亚宝药业集团股份有限公司",
+        "type": "贴剂",
+        "price": "¥18.50",
+        "img": "./images/list/list1.jpg",
+        "icon": "./images/list/list_icon1.jpg"
+    },
+    {
+        "name": "康王 复方酮康唑发用洗剂",
+        "spec": "5ml/袋",
+        "firm": "滇虹药业集团股份有限公司",
+        "type": "洗剂",
+        "price": "¥2.60",
+        "img": "./images/list/list2.jpg",
+        "icon": "./images/list/list_icon2.jpg"
+    }, {
+        "name": "以岭 芪苈强心胶囊",
+        "spec": "0.3gx12粒x3板/盒",
+        "firm": "石家庄以岭药业股份有限公司",
+        "type": "硬胶囊剂",
+        "price": "¥21.74",
+        "img": "./images/list/list4.jpg",
+        "icon": "./images/list/list_icon4.jpg"
+    }, {
+        "name": "亚宝 丁桂儿脐贴",
+        "spec": "1.6gx3贴/盒",
+        "firm": "亚宝药业集团股份有限公司",
+        "type": "贴剂",
+        "price": "¥18.50",
+        "img": "./images/list/list1.jpg",
+        "icon": "./images/list/list_icon1.jpg"
+    },
+    {
+        "name": "康王 复方酮康唑发用洗剂",
+        "spec": "5ml/袋",
+        "firm": "滇虹药业集团股份有限公司",
+        "type": "洗剂",
+        "price": "¥2.60",
+        "img": "./images/list/list2.jpg",
+        "icon": "./images/list/list_icon2.jpg"
+    },
+    {
+        "name": "尤诺 苯溴马隆片",
+        "spec": "50mgx10片/盒",
+        "firm": "常州康普药业有限公司",
+        "type": "片剂",
+        "price": "¥9.60",
+        "img": "./images/list/list3.jpg",
+        "icon": "./images/list/list_icon3.jpg"
+    }, {
+        "name": "云南白药创可贴规格：",
+        "spec": "1.5cmx2.3cmx20片/盒",
+        "firm": "云南白药集团无锡药业有限公司",
+        "type": "贴剂(轻巧护翼型)",
+        "price": "¥3.26",
+        "img": "./images/list/list6.jpg",
+        "icon": "./images/list/list_icon6.jpg"
+    },
+    {
+        "name": "达美康 格列齐特片(Ⅱ)",
+        "spec": "80mgx20片x3板/盒",
+        "firm": "天津华津制药有限公司",
+        "type": "片剂",
+        "price": "¥46.99",
+        "img": "./images/list/list5.jpg",
+        "icon": "./images/list/list_icon5.jpg"
+    },
+    {
+        "name": "尤诺 苯溴马隆片",
+        "spec": "50mgx10片/盒",
+        "firm": "常州康普药业有限公司",
+        "type": "片剂",
+        "price": "¥9.60",
+        "img": "./images/list/list3.jpg",
+        "icon": "./images/list/list_icon3.jpg"
+    }, {
+        "name": "云南白药创可贴规格：",
+        "spec": "1.5cmx2.3cmx20片/盒",
+        "firm": "云南白药集团无锡药业有限公司",
+        "type": "贴剂(轻巧护翼型)",
+        "price": "¥3.26",
+        "img": "./images/list/list6.jpg",
+        "icon": "./images/list/list_icon6.jpg"
+    }, {
+        "name": "维生素B12片",
+        "spec": "25μgx100片/瓶",
+        "firm": "山西亨瑞达制药有限公司",
+        "type": "糖衣片剂",
+        "price": "¥1.08",
+        "img": "./images/list/list7.jpg",
+        "icon": "./images/list/list_icon7.jpg"
+    },
+    {
+        "name": "以岭 芪苈强心胶囊",
+        "spec": "0.3gx12粒x3板/盒",
+        "firm": "石家庄以岭药业股份有限公司",
+        "type": "硬胶囊剂",
+        "price": "¥21.74",
+        "img": "./images/list/list4.jpg",
+        "icon": "./images/list/list_icon4.jpg"
+    }, {
+        "name": "亚宝 丁桂儿脐贴",
+        "spec": "1.6gx3贴/盒",
+        "firm": "亚宝药业集团股份有限公司",
+        "type": "贴剂",
+        "price": "¥18.50",
+        "img": "./images/list/list1.jpg",
+        "icon": "./images/list/list_icon1.jpg"
+    },
+    {
+        "name": "康王 复方酮康唑发用洗剂",
+        "spec": "5ml/袋",
+        "firm": "滇虹药业集团股份有限公司",
+        "type": "洗剂",
+        "price": "¥2.60",
+        "img": "./images/list/list2.jpg",
+        "icon": "./images/list/list_icon2.jpg"
+    },
+    {
+        "name": "尤诺 苯溴马隆片",
+        "spec": "50mgx10片/盒",
+        "firm": "常州康普药业有限公司",
+        "type": "片剂",
+        "price": "¥9.60",
+        "img": "./images/list/list3.jpg",
+        "icon": "./images/list/list_icon3.jpg"
+    }, {
+        "name": "云南白药创可贴规格：",
+        "spec": "1.5cmx2.3cmx20片/盒",
+        "firm": "云南白药集团无锡药业有限公司",
+        "type": "贴剂(轻巧护翼型)",
+        "price": "¥3.26",
+        "img": "./images/list/list6.jpg",
+        "icon": "./images/list/list_icon6.jpg"
+    },
+    {
+        "name": "达美康 格列齐特片(Ⅱ)",
+        "spec": "80mgx20片x3板/盒",
+        "firm": "天津华津制药有限公司",
+        "type": "片剂",
+        "price": "¥46.99",
+        "img": "./images/list/list5.jpg",
+        "icon": "./images/list/list_icon5.jpg"
+    },
+    {
+        "name": "云南白药创可贴规格：",
+        "spec": "1.5cmx2.3cmx20片/盒",
+        "firm": "云南白药集团无锡药业有限公司",
+        "type": "贴剂(轻巧护翼型)",
+        "price": "¥3.26",
+        "img": "./images/list/list6.jpg",
+        "icon": "./images/list/list_icon6.jpg"
+    }, {
+        "name": "维生素B12片",
+        "spec": "25μgx100片/瓶",
+        "firm": "山西亨瑞达制药有限公司",
+        "type": "糖衣片剂",
+        "price": "¥1.08",
+        "img": "./images/list/list7.jpg",
+        "icon": "./images/list/list_icon7.jpg"
+    }, {
+        "name": "云南白药创可贴规格：",
+        "spec": "1.5cmx2.3cmx20片/盒",
+        "firm": "云南白药集团无锡药业有限公司",
+        "type": "贴剂(轻巧护翼型)",
+        "price": "¥3.26",
+        "img": "./images/list/list6.jpg",
+        "icon": "./images/list/list_icon6.jpg"
+    },
+    {
+        "name": "达美康 格列齐特片(Ⅱ)",
+        "spec": "80mgx20片x3板/盒",
+        "firm": "天津华津制药有限公司",
+        "type": "片剂",
+        "price": "¥46.99",
+        "img": "./images/list/list5.jpg",
+        "icon": "./images/list/list_icon5.jpg"
+    },
+    {
+        "name": "尤诺 苯溴马隆片",
+        "spec": "50mgx10片/盒",
+        "firm": "常州康普药业有限公司",
+        "type": "片剂",
+        "price": "¥9.60",
+        "img": "./images/list/list3.jpg",
+        "icon": "./images/list/list_icon3.jpg"
+    }, {
+        "name": "云南白药创可贴规格：",
+        "spec": "1.5cmx2.3cmx20片/盒",
+        "firm": "云南白药集团无锡药业有限公司",
+        "type": "贴剂(轻巧护翼型)",
+        "price": "¥3.26",
+        "img": "./images/list/list6.jpg",
+        "icon": "./images/list/list_icon6.jpg"
+    }, {
+        "name": "维生素B12片",
+        "spec": "25μgx100片/瓶",
+        "firm": "山西亨瑞达制药有限公司",
+        "type": "糖衣片剂",
+        "price": "¥1.08",
+        "img": "./images/list/list7.jpg",
+        "icon": "./images/list/list_icon7.jpg"
+    },
+    {
+        "name": "以岭 芪苈强心胶囊",
+        "spec": "0.3gx12粒x3板/盒",
+        "firm": "石家庄以岭药业股份有限公司",
+        "type": "硬胶囊剂",
+        "price": "¥21.74",
+        "img": "./images/list/list4.jpg",
+        "icon": "./images/list/list_icon4.jpg"
+    }, {
+        "name": "亚宝 丁桂儿脐贴",
+        "spec": "1.6gx3贴/盒",
+        "firm": "亚宝药业集团股份有限公司",
+        "type": "贴剂",
+        "price": "¥18.50",
+        "img": "./images/list/list1.jpg",
+        "icon": "./images/list/list_icon1.jpg"
+    },
+    {
+        "name": "康王 复方酮康唑发用洗剂",
+        "spec": "5ml/袋",
+        "firm": "滇虹药业集团股份有限公司",
+        "type": "洗剂",
+        "price": "¥2.60",
+        "img": "./images/list/list2.jpg",
+        "icon": "./images/list/list_icon2.jpg"
+    },
+    {
+        "name": "盐酸雷尼替丁胶囊",
+        "spec": "0.15gx30粒/瓶",
+        "firm": "苏州弘森药业股份有限公司",
+        "type": "胶囊剂",
+        "price": "¥4.50",
+        "img": "./images/list/list0.jpg",
+        "icon": "./images/list/list_icon0.jpg"
+    }, {
+        "name": "达美康 格列齐特片(Ⅱ)",
+        "spec": "80mgx20片x3板/盒",
+        "firm": "天津华津制药有限公司",
+        "type": "片剂",
+        "price": "¥46.99",
+        "img": "./images/list/list5.jpg",
+        "icon": "./images/list/list_icon5.jpg"
+    },
+    {
+        "name": "尤诺 苯溴马隆片",
+        "spec": "50mgx10片/盒",
+        "firm": "常州康普药业有限公司",
+        "type": "片剂",
+        "price": "¥9.60",
+        "img": "./images/list/list3.jpg",
+        "icon": "./images/list/list_icon3.jpg"
+    }, {
+        "name": "云南白药创可贴规格：",
+        "spec": "1.5cmx2.3cmx20片/盒",
+        "firm": "云南白药集团无锡药业有限公司",
+        "type": "贴剂(轻巧护翼型)",
+        "price": "¥3.26",
+        "img": "./images/list/list6.jpg",
+        "icon": "./images/list/list_icon6.jpg"
+    }, {
+        "name": "维生素B12片",
+        "spec": "25μgx100片/瓶",
+        "firm": "山西亨瑞达制药有限公司",
+        "type": "糖衣片剂",
+        "price": "¥1.08",
+        "img": "./images/list/list7.jpg",
+        "icon": "./images/list/list_icon7.jpg"
+    },
+    {
+        "name": "以岭 芪苈强心胶囊",
+        "spec": "0.3gx12粒x3板/盒",
+        "firm": "石家庄以岭药业股份有限公司",
+        "type": "硬胶囊剂",
+        "price": "¥21.74",
+        "img": "./images/list/list4.jpg",
+        "icon": "./images/list/list_icon4.jpg"
+    }, {
+        "name": "亚宝 丁桂儿脐贴",
+        "spec": "1.6gx3贴/盒",
+        "firm": "亚宝药业集团股份有限公司",
+        "type": "贴剂",
+        "price": "¥18.50",
+        "img": "./images/list/list1.jpg",
+        "icon": "./images/list/list_icon1.jpg"
+    },
+    {
+        "name": "亚宝 丁桂儿脐贴",
+        "spec": "1.6gx3贴/盒",
+        "firm": "亚宝药业集团股份有限公司",
+        "type": "贴剂",
+        "price": "¥18.50",
+        "img": "./images/list/list1.jpg",
+        "icon": "./images/list/list_icon1.jpg"
+    },
+    {
+        "name": "以岭 芪苈强心胶囊",
+        "spec": "0.3gx12粒x3板/盒",
+        "firm": "石家庄以岭药业股份有限公司",
+        "type": "硬胶囊剂",
+        "price": "¥21.74",
+        "img": "./images/list/list4.jpg",
+        "icon": "./images/list/list_icon4.jpg"
+    },
+    {
+        "name": "达美康 格列齐特片(Ⅱ)",
+        "spec": "80mgx20片x3板/盒",
+        "firm": "天津华津制药有限公司",
+        "type": "片剂",
+        "price": "¥46.99",
+        "img": "./images/list/list5.jpg",
+        "icon": "./images/list/list_icon5.jpg"
+    },
+    {
+        "name": "康王 复方酮康唑发用洗剂",
+        "spec": "5ml/袋",
+        "firm": "滇虹药业集团股份有限公司",
+        "type": "洗剂",
+        "price": "¥2.60",
+        "img": "./images/list/list2.jpg",
+        "icon": "./images/list/list_icon2.jpg"
+    },
+    {
+        "name": "尤诺 苯溴马隆片",
+        "spec": "50mgx10片/盒",
+        "firm": "常州康普药业有限公司",
+        "type": "片剂",
+        "price": "¥9.60",
+        "img": "./images/list/list3.jpg",
+        "icon": "./images/list/list_icon3.jpg"
+    },
+    {
+        "name": "以岭 芪苈强心胶囊",
+        "spec": "0.3gx12粒x3板/盒",
+        "firm": "石家庄以岭药业股份有限公司",
+        "type": "硬胶囊剂",
+        "price": "¥21.74",
+        "img": "./images/list/list4.jpg",
+        "icon": "./images/list/list_icon4.jpg"
+    },
+    {
+        "name": "达美康 格列齐特片(Ⅱ)",
+        "spec": "80mgx20片x3板/盒",
+        "firm": "天津华津制药有限公司",
+        "type": "片剂",
+        "price": "¥46.99",
+        "img": "./images/list/list5.jpg",
+        "icon": "./images/list/list_icon5.jpg"
+    },
+    {
+        "name": "云南白药创可贴规格：",
+        "spec": "1.5cmx2.3cmx20片/盒",
+        "firm": "云南白药集团无锡药业有限公司",
+        "type": "贴剂(轻巧护翼型)",
+        "price": "¥3.26",
+        "img": "./images/list/list6.jpg",
+        "icon": "./images/list/list_icon6.jpg"
+    }, {
+        "name": "维生素B12片",
+        "spec": "25μgx100片/瓶",
+        "firm": "山西亨瑞达制药有限公司",
+        "type": "糖衣片剂",
+        "price": "¥1.08",
+        "img": "./images/list/list7.jpg",
+        "icon": "./images/list/list_icon7.jpg"
+    }
+]

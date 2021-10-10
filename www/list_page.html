@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>列表页</title>
+    <link rel="stylesheet" href="./public/base.css">
+    <link rel="stylesheet" href="./public/common.css">
+    <link rel="stylesheet" href="./css/list_page.css">
+</head>
+
+<body>
+    <!-- 顶部区域 -->
+    <div class="topBox"></div>
+    <div class="headerBox"></div>
+
+    <!-- 导航栏区域 -->
+    <div class="navBox"></div>
+
+    <!-- 主体区域 -->
+    <div class="content w clearfix">
+        <div class="left">
+            <h2 class="left_header">所有类目</h2>
+            <div class="left_content">
+                <h3><i></i><a>中西药品</a></h3>
+                <div class="left_list clearfix">
+                    <a href="" class="a_title">心脑血管</a>
+                    <a href="">风湿骨科</a>
+                    <a href="">肠胃用药</a>
+                    <a href="">肝胆用药</a>
+                    <a href="">男科用药</a>
+                    <a href="">营养滋补</a>
+                    <a href="">呼吸系统</a>
+                    <a href="">皮肤用药</a>
+                    <a href="">泌尿科药</a>
+                    <a href="">妇科用药</a>
+                    <a href="">抗肿瘤药</a>
+                    <a href="">儿科用药</a>
+                </div>
+                <h3><i></i><a>医疗器械</a></h3>
+                <div class="left_list clearfix">
+                    <a href="">避孕用药</a>
+                    <a href="">家庭常备</a>
+                    <a href="">检测设备</a>
+                    <a href="">康复理疗</a>
+                    <a href="">外用贴膏</a>
+                </div>
+                <h3><i></i><a>养生保养</a></h3>
+                <div class="left_list clearfix">
+                    <a href="">大众养生</a>
+                    <a href="">男性保健</a>
+                    <a href="">女性保健</a>
+                    <a href="">中老年保健</a>
+                    <a href="">青少年儿童</a>
+                </div>
+                <h3><i></i><a>计生用品</a></h3>
+                <div class="left_list clearfix">
+                    <a href="">情趣用品</a>
+                </div>
+                <h3><i></i><a>中药饮片</a></h3>
+                <div class="left_list clearfix">
+                    <a href="">名贵中药</a>
+                    <a href="">中药材</a>
+                    <a href="">中药粉末</a>
+                </div>
+                <h3><i></i><a>美容护肤</a></h3>
+                <div class="left_list clearfix">
+                    <a href="">祛痘祛斑</a>
+                    <a href="">时尚彩妆</a>
+                    <a href="">身体护理</a>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="right_header">
+                <a href="">药房网商城</a>
+                <i></i>
+                <em>中西药品</em>
+            </div>
+            <div class="right_cont">
+                <div class="opt">
+                    <p>共<b>111</b>件相关商品</p>
+                </div>
+                <div class="right_box clearfix">
+                    <div class="firm cont_box clearfix">
+                        <span class="cont_box_top">厂家选择:</span>
+                        <div class="firm_cont pub">
+                        </div>
+                        <span class="cont_box_bottom">展开<i></i></span>
+                    </div>
+                    <div class="brand cont_box">
+                        <span class="cont_box_top">品牌选择:</span>
+                        <div class="brand_cont pub"></div>
+                        <span class="cont_box_bottom">展开<i></i></span>
+                    </div>
+                    <div class="model cont_box">
+                        <span class="cont_box_top">剂型选择:</span>
+                        <div class="model pub"></div>
+                        <span class="cont_box_bottom">展开<i></i></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product">
+                <div class="pro_header">
+                    <input type="radio" name="pro" id="pro_have">
+                    <label for="pro_have">仅显示有报价的商品</label>
+                    <input type="radio" name="pro" id="pro_all">
+                    <label for="pro_all">显示所有产品</label>
+                    <div class="pro_header_right">
+                        <a href=""></a>
+                        <span><i>1</i>/1363</span>
+                        <a href=""></a>
+                    </div>
+                </div>
+                <div class="pro_content">
+                    <ul class="clearfix">
+                        <!-- <li>
+                            <a href="" class="pro_box">
+                                <img src="./images/list/list0.jpg" alt="" class="pro_img">
+                                <div class="pro_price">￥7.87</div>
+                                <a href="" class="pro_a">都乐 金嗓子喉片</a>
+                                <p>规格: 2g*6片*2板/盒</p>
+                                <p>剂型: 片剂</p>
+                                <p>批准文号: <img src="./images/list/list_icon0.jpg" alt=""></p>
+                                <div class="pro_f">生产厂家:广西金嗓子有限公司</div>
+                                <div class="pro_b">
+                                    <span>共<i>1116</i>个商家有售</span>
+                                    <a href="">查看详情</a>
+                                </div>
+                            </a>
+                        </li> -->
+                    </ul>
+
+                </div>
+            </div>
+
+            <div class="page">
+                <ul class="clearfix">
+                    <li class="pag_left" my_class="left">&laquo;</li>
+                    <li my_class="omit_left"></li>
+                    <li class="page_li" id="page_style" my_class="opt">1</li>
+                    <li my_class="opt">2</li>
+                    <li my_class="opt">3</li>
+                    <li my_class="omit_right">...</li>
+                    <li class="pag_right" my_class="right">&raquo;</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 底部区域 -->
+    <div class="footerBox"></div>
+</body>
+<script src="./libs/jquery.js"></script>
+<script>
+    $(".topBox").load("http://localhost:3000/public/common.html .header_top");
+    $(".headerBox").load("http://localhost:3000/public/common.html .header");
+    $(".navBox").load("http://localhost:3000/public/common.html .nav")
+    $(".footerBox").load("http://localhost:3000/public/common.html .footer")
+</script>
+
+<script src="./public/ajax.js"></script>
+<script src="./public/jsonp.js"></script>
+<script src="./public/common.js"></script>
+<script src="./js/list_page.js"></script>
+
+</html>

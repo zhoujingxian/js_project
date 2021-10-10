@@ -66,6 +66,12 @@ function fn(req, res, obj) {
         case 'link':
             link(req, res, obj);
             break;
+        case 'sitems':
+            sitems(req, res, obj);
+            break;
+        case 'listPro':
+            listPro(req, res, obj);
+            break;
         default:
             error(req, res);
     }
@@ -86,6 +92,14 @@ function rf(url, res, type) {
         res.write(JSON.stringify(obj));
         res.end()
     })
+}
+
+function listPro(req, res, ajaxData) {
+    rf('./databases/listProduct.json', res, "列表页产品");
+}
+
+function sitems(req, res, ajaxData) {
+    rf('./databases/list.json', res, "列表页");
 }
 
 function link(req, res, ajaxData) {

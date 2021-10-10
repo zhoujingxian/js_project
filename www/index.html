@@ -13,25 +13,11 @@
 
 <body>
     <!-- 顶部公共区域 -->
-    <div class="topBox">
-    </div>
+    <div class="topBox"></div>
     <div class="headerBox"></div>
 
     <!-- 导航栏区域 -->
-    <!-- 导航栏 -->
-    <div class="nav w clearfix">
-        <div class="menuBox"></div>
-
-        <ul class="nav_content">
-            <li><a href="">首页</a></li>
-            <li><a href="">药品超市</a></li>
-            <li><a href="">药房联盟</a></li>
-            <li><a href="">医院大全</a></li>
-            <li><a href="">医药资讯</a></li>
-            <li><a href="">在线问诊</a></li>
-            <li><a href="">商家入驻</a></li>
-        </ul>
-    </div>
+    <div class="navBox"></div>
 
     <!-- 轮播图 -->
     <div class="banner">
@@ -476,7 +462,7 @@
         </ul>
     </div>
 
-    <!-- 底部公共区域 -->
+    <!-- 底部区域 -->
     <div class="footerBox"></div>
 
 </body>
@@ -484,7 +470,7 @@
 <script>
     $(".topBox").load("http://localhost:3000/public/common.html .header_top");
     $(".headerBox").load("http://localhost:3000/public/common.html .header");
-    $(".menuBox").load("http://localhost:3000/public/common.html .menu")
+    $(".navBox").load("http://localhost:3000/public/common.html .nav")
     $(".footerBox").load("http://localhost:3000/public/common.html .footer")
 </script>
 <script src="./js/move.js"></script>

@@ -152,6 +152,7 @@ window.onload = function () {
     }
     class Menu {
         constructor() {
+            this.oMenu = document.querySelector('.nav .menu');
             this.oMenu2 = document.querySelector(".nav .menu2")
             this.oMenuLi = Array.from(document.querySelectorAll(".nav .menu2>li"));
             this.oMerUl = Array.from(document.querySelectorAll('.menu3 .menu_mer'))
@@ -166,6 +167,12 @@ window.onload = function () {
         }
         addEvent() {
             const that = this;
+            this.oMenu.onmouseenter = function () {
+                that.menuShow();
+            }
+            this.oMenu.onmouseleave = function () {
+                that.menuHide();
+            }
             // 三级菜单的显示和隐藏
             this.oMenuLi.forEach((value, index) => {
                 value.onmouseenter = function () {
@@ -183,6 +190,14 @@ window.onload = function () {
                 that.menuLea();
             }
         }
+        menuShow() {
+            this.oMenu2.style.display = "block"
+        }
+        menuHide() {
+            this.oMenu2.style.display = "none"
+
+        }
+        menu
         // 菜单栏推荐商家
         merchant() {
             ajax({
