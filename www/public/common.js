@@ -150,5 +150,89 @@ window.onload = function () {
             }
         }
     }
+    class Menu {
+        constructor() {
+            this.oMenu2 = document.querySelector(".nav .menu2")
+            this.oMenuLi = Array.from(document.querySelectorAll(".nav .menu2>li"));
+            this.oMerUl = Array.from(document.querySelectorAll('.menu3 .menu_mer'))
+
+            this.url = "http://localhost:3000/api";
+
+            this.init()
+            this.addEvent();
+        }
+        init() {
+            this.merchant();
+        }
+        addEvent() {
+            const that = this;
+            // 三级菜单的显示和隐藏
+            this.oMenuLi.forEach((value, index) => {
+                value.onmouseenter = function () {
+                    that.menuLiEnt(value, index)
+                }
+                value.onmouseleave = function () {
+                    that.menuLiLea(value, index)
+                }
+            })
+            // 二级菜单的背景颜色
+            this.oMenu2.onmouseenter = function () {
+                that.menuEnt();
+            }
+            this.oMenu2.onmouseleave = function () {
+                that.menuLea();
+            }
+        }
+        // 菜单栏推荐商家
+        merchant() {
+            ajax({
+                url: this.url,
+                data: {
+                    type: 'merchant'
+                },
+                success: res => {
+                    if (res.code) {
+                        console.log(res.title)
+                    } else {
+                        console.log(res.title);
+                        this.merSelect(res.data)
+                    }
+                }
+            })
+        }
+
+        // 三级菜单的显示和隐藏
+        menuLiEnt(value, index) {
+            value.style.background = "#f4f4f4";
+            value.style.borderRight = "none";
+            value.children[3].style.display = "block";
+            this.menuPrev = index;
+        }
+        menuLiLea() {
+            this.oMenuLi[this.menuPrev].style.background = "none";
+            this.oMenuLi[this.menuPrev].children[3].style.display = "none";
+
+        }
+        // 二级菜单的背景颜色
+        menuEnt() {
+            this.oMenu2.style.background = "#fff";
+        }
+        menuLea() {
+            this.oMenu2.style.background = "rgba(255, 255, 255, .9)";
+        }
+        // 菜单栏推荐商家
+        merSelect(data) {
+            this.oMerUl.forEach((value, index) => {
+                let idx = data.findIndex(val => val.title === value.getAttribute("my_name"));
+                let str = "";
+                for (let i of data[idx].data) {
+                    str += `<li><a href="">${i}</a></li>`
+                }
+                value.innerHTML = str;
+            })
+
+        }
+    }
     new Common();
+    new Menu()
 }

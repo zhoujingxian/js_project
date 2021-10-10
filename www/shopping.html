@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>购物车</title>
+    <link rel="stylesheet" href="./public/base.css">
+    <link rel="stylesheet" href="./public/common.css">
+    <link rel="stylesheet" href="./css/shopping.css">
+</head>
+
+<body>
+    <!-- 顶部区域 -->
+    <div class="topBox"></div>
+    <div class="header w">
+        <a href="">
+            <h1 class="logo">药房网商城</h1>
+        </a>
+        <div class="sub"><span>购物清单</span></div>
+        <div class="step"></div>
+    </div>
+
+    <!-- 主体区域 -->
+    <div class="main w">
+        <div class="main_logo">商品列表</div>
+        <table class="main_header">
+            <tr>
+                <td class="w1"><input type="checkbox" name="all" id="all"></td>
+                <td class="w2"><label for="all">全选</label></td>
+                <td class="w3">商品信息</td>
+                <td class="w4">单价（元）</td>
+                <td class="w5">数量</td>
+                <td class="w6">小计（元）</td>
+                <td class="w7">操作</td>
+            </tr>
+        </table>
+        <div class="warn">依据GSP相关规定，药品一经售出，无质量问题不退不换。</div>
+
+        <div class="content">
+            <table>
+                <thead>
+                    <tr>
+                        <td class="w1"><input type="checkbox" name="" id=""></td>
+                        <td class="w8" colspan=3><a href="">颍上县康伴大药房</a></td>
+                        <td class="w9" colspan=3>
+                            <img src="./images/shopping/icon_cart_post.jpg" alt="">
+                            <span>满79元包邮</span>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="w1"><input type="checkbox" name="" id=""></td>
+                        <td class="w2">
+                            <img src="./images/shopping/d1.jpg" alt="">
+                        </td>
+                        <td class="w3">
+                            <p><a href=""><a href=""><i class="cf"></i><em>枢芬 巴氯芬片(片剂)</em></a></a></p>
+                            <p>规格：10mgx10片/盒</p>
+                            <p>厂家：福安药业集团宁波天衡制药有限公司</p>
+                        </td>
+                        <td class="w4">
+                            <span>￥10.39</span>
+                        </td>
+                        <td class="w5">
+                            <div>
+                                <button class="sub"></button>
+                                <input type="text" name="" id="">
+                                <button class="add"></button>
+                            </div>
+                        </td>
+                        <td class="w6">
+                            <span>￥10.39</span>
+                        </td>
+                        <td class="w7">
+                            <input type="button" value="删除">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="sum">
+        <div class="w clearfix">
+            <span class="sum_check">
+                <input type="checkbox" name="all_bot" id="all_bot">
+                <label for="all_bot">全选</label>
+            </span>
+            <span id="allDel">删除</span>
+            <a href="" id="goon">
+                &lt;&lt;我再逛逛</a>
+            <div class="sum_right">
+                <span class="title">商品金额总计（不含运费及包装费）</span>
+                <span class="price">￥99.99</span>
+            </div>
+            <a href="" class="close">去结算</a>
+        </div>
+    </div>
+    <!-- 底部区域 -->
+    <div class="footerBox"></div>
+</body>
+<script src="./libs/jquery.js"></script>
+<script>
+    $(".topBox").load("http://localhost:3000/public/common.html .header_top");
+
+    $(".footerBox").load("http://localhost:3000/public/common.html .footer")
+</script>
+<script src="./public/ajax.js"></script>
+<script src="./js/shopping.js"></script>
+
+</html>

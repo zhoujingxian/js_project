@@ -24,7 +24,6 @@
     .sub {
         width: 112px;
         height: 55px;
-        transform: translateY(-50%);
         left: 220px;
         border-left: 1px solid #e5e5e5;
         padding-left: 15px;
@@ -75,6 +74,7 @@ $color:(#e5e5e5 #16c08e #0cb95f #333 #999 #ea6171);
             margin: 0 3px;
             position: relative;
             color: nth($color, 5);
+            cursor: pointer;
         }
 
         .login_top span:nth-of-type(1):after {
@@ -114,9 +114,6 @@ $color:(#e5e5e5 #16c08e #0cb95f #333 #999 #ea6171);
             position: relative;
             margin-top: 6px;
 
-
-
-
             i {
                 position: absolute;
                 width: 18px;
@@ -135,8 +132,6 @@ $color:(#e5e5e5 #16c08e #0cb95f #333 #999 #ea6171);
                 background-position: -372px -109px;
             }
 
-
-
             .forget {
                 height: 50px;
                 line-height: 50px;
@@ -153,10 +148,10 @@ $color:(#e5e5e5 #16c08e #0cb95f #333 #999 #ea6171);
                     right: 0;
                     font-size: 14px;
                     text-decoration: underline;
-                }
 
-                a:hover {
-                    color: nth($color, 3)
+                    &:hover {
+                        color: nth($color, 3)
+                    }
                 }
             }
 
@@ -193,6 +188,7 @@ $color:(#e5e5e5 #16c08e #0cb95f #333 #999 #ea6171);
             top: 72px;
         }
 
+
         #submit {
             display: block;
             width: 320px;
@@ -211,10 +207,11 @@ $color:(#e5e5e5 #16c08e #0cb95f #333 #999 #ea6171);
 
             a {
                 color: nth($color, 3);
-            }
 
-            a:hover {
-                text-decoration: underline;
+                &:hover {
+                    text-decoration: underline;
+
+                }
             }
         }
 
@@ -269,6 +266,10 @@ $color:(#e5e5e5 #16c08e #0cb95f #333 #999 #ea6171);
 .footer {
     height: 130px;
 
+    a:hover {
+        text-decoration: underline;
+    }
+
     .footer_box {
         width: 1000px;
         margin: 0 auto;
@@ -301,9 +302,7 @@ $color:(#e5e5e5 #16c08e #0cb95f #333 #999 #ea6171);
         right: 0;
     }
 
-    ul li:hover {
-        text-decoration: underline;
-    }
+
 
     p {
         text-align: center;
