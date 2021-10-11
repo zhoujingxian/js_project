@@ -2,30 +2,60 @@
     "name": "【维福佳】维生素C片",
     "specification": "0.1gx100片/瓶",
     "price": "￥1.15",
-    "title": "",
-    "img": "./images/index/more26.jpg"
+    "img": "./images/index/more26.jpg",
+    "name2": "维生素C片",
+    "brand": "维福佳",
+    "firm": "华中药业股份有限公司",
+    "title": "①适应症：用于预防坏血病，也可用于各种急慢性传染疾病及紫癜等的辅助治疗。②禁忌症：尚不明确。",
+    "type": "片剂",
+    "imgM": "wfj",
+    "ID": "9364310"
 }, {
     "name": "【九邦】创可贴",
     "specification": "7cmx1.8cmx100片/盒",
     "price": "￥7.80",
+    "img": "./images/index/more27.jpg",
+    "name2": "创可贴",
+    "brand": "九邦",
+    "firm": "深圳三九九正生物医药有限公司",
     "title": "",
-    "img": "./images/index/more27.jpg"
+    "type": "贴剂(防水透气型)",
+    "imgM": "ckt",
+    "ID": "4170838"
 }, {
-    "name": "【云泰云丰】创口贴",
-    "specification": "7.2cmx1.9cmx100片/盒",
-    "price": "￥9.50",
+    "name": "【康博特】钙铁锌硒维生素咀嚼片",
+    "specification": "1.2gx60片/瓶",
+    "price": "￥27.99",
     "title": "",
-    "img": "./images/index/more28.jpg"
+    "img": "./images/index/health4.jpg",
+    "name2": "钙铁锌硒维生素咀嚼片",
+    "brand": "康博特",
+    "firm": "安徽康博特保健食品有限公司",
+    "type": "片剂(4-10岁)",
+    "imgM": "jjp",
+    "ID": "6921407"
 }, {
     "name": "【一品康】蛋白粉",
-    "specification": "400g+1gx40片/盒",
+    "specification": "500g/盒",
     "price": "￥128.00",
     "title": "",
-    "img": "./images/index/more29.jpg"
+    "img": "./images/index/more29.jpg",
+    "name2": "蛋白粉",
+    "brand": "一品康",
+    "firm": "广东长兴生物科技股份有限公司",
+    "type": "粉剂+片剂",
+    "imgM": "dbf",
+    "ID": "3437664"
 }, {
     "name": "【星鲨】维生素D滴剂",
     "specification": "400Ux10粒x3板/盒",
     "price": "￥21.25",
     "title": "",
-    "img": "./images/index/more16.jpg"
+    "img": "./images/index/more16.jpg",
+    "name2": "维生素D滴剂",
+    "brand": "星鲨",
+    "firm": "国药控股星鲨制药(厦门)有限公司",
+    "type": "胶囊型",
+    "imgM": "wss",
+    "ID": "5130644"
 }]

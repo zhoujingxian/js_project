@@ -95,7 +95,8 @@ function rf(url, res, type) {
 }
 
 function listPro(req, res, ajaxData) {
-    rf('./databases/listProduct.json', res, "列表页产品");
+    rf('./databases/detail.json', res, "列表页产品");
+
 }
 
 function sitems(req, res, ajaxData) {
@@ -154,7 +155,7 @@ function error(req, res) {
 }
 
 function staticBandle(req, res, url) {
-    fs.readFile('./www' + url.pathname, (err, data) => {
+    fs.readFile('./dist' + url.pathname, (err, data) => {
         if (err)
             res.write('NOTFOUND');
         else {
