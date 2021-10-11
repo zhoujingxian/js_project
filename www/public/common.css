@@ -405,6 +405,7 @@
 }
 
 .menu .menu2 {
+    display: none;
     width: 230px;
     height: 390px;
     position: absolute;
