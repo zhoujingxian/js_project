@@ -354,7 +354,7 @@
         bannerTime() {
             this.t = setInterval(() => {
                 this.banner_left();
-            }, 3000)
+            }, 2000)
         }
         stopInterval() {
             clearInterval(this.t);

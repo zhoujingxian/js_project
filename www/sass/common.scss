@@ -109,10 +109,27 @@
     line-height: 40px;
 }
 
+.ht_user {
+    width: 185px;
+    height: 40px;
+}
+
 .register {
     width: 185px;
     text-align: right;
     letter-spacing: 1px;
+    display: none;
+}
+
+.own {
+    width: 185px;
+    text-align: right;
+    letter-spacing: 1px;
+    display: none;
+
+    .exit {
+        color: #ccc
+    }
 }
 
 .register i {

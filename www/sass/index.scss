@@ -107,6 +107,10 @@
     font-size: 14px;
     font-weight: 400;
     color: #000;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
 }
 
 /* 限时购 */

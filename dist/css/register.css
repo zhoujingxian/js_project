@@ -1,0 +1,191 @@
+.w {
+  width: 990px;
+}
+
+.navBox {
+  background: #0cb95f;
+}
+.navBox .menu > a {
+  background: #0aa454;
+}
+.navBox .menu2 {
+  display: none;
+}
+.navBox .nav_content a {
+  color: #fff;
+}
+.navBox .nav_content li:hover a {
+  color: #fff;
+}
+
+.header_top .right {
+  float: right;
+}
+.header_top .right li:after {
+  width: 0 !important;
+}
+.header_top .left li:nth-of-type(2)::after {
+  width: 0;
+}
+
+.header {
+  height: 120px;
+}
+.header .sub {
+  width: 112px;
+  height: 55px;
+  left: 220px;
+  border-left: 1px solid #e5e5e5;
+  padding-left: 15px;
+}
+.header .sub span {
+  line-height: 55px;
+  font-size: 24px;
+  font-weight: bolder;
+}
+
+.main {
+  background: #f4f4f4;
+  padding-top: 30px;
+  position: relative;
+}
+.main .main_header {
+  position: absolute;
+  top: 30px;
+  width: 180px;
+  height: 51px;
+  font-size: 18px;
+  text-align: center;
+  line-height: 51px;
+  color: #0cb95f;
+  border-top: 3px solid #0cb95f;
+  background: #fff;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+.main .main_cont {
+  background: #fff;
+  padding-top: 30px;
+  border: 1px solid #ccc;
+  margin-top: 50px;
+}
+.main .main_cont h2 {
+  height: 41px;
+  line-height: 41px;
+  font-size: 15px;
+  font-weight: 400;
+  padding-left: 40px;
+  background: #f4f4f4;
+  border-top: 1px solid #ccc;
+  margin-bottom: 30px;
+}
+.main .main_cont form div {
+  height: 42px;
+  font-size: 14px;
+  line-height: 42px;
+  margin: 10px 0;
+  position: relative;
+}
+.main .main_cont form div input {
+  width: 322px;
+  height: 42px;
+  border: 1px solid #e5e5e5;
+  margin-left: 20px;
+  padding: 0 20px 0 35px;
+  font-size: 14px;
+}
+.main .main_cont form div span {
+  display: inline-block;
+  width: 170px;
+  text-align: right;
+}
+.main .main_cont form div em {
+  color: #e50000;
+}
+.main .main_cont form div i {
+  position: absolute;
+  width: 18px;
+  height: 25px;
+  background: url(../images/index/icons.png);
+  top: 10px;
+  left: 200px;
+}
+.main .main_cont form div:nth-of-type(1) > i {
+  background-position: -391px -109px;
+}
+.main .main_cont form div:nth-of-type(n+2) i {
+  background-position: -410px -109px;
+}
+.main .main_cont form div:nth-of-type(4) input {
+  padding-left: 5px;
+}
+.main .main_cont form div b {
+  color: #e16070;
+  font-size: 12px;
+  font-weight: 400;
+  padding-left: 20px;
+}
+.main .main_cont form div b i {
+  position: static;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-position: -280px -120px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.main .main_cont form a {
+  display: inline-block;
+  width: 320px;
+  height: 48px;
+  font-size: 18px;
+  color: #fff;
+  text-align: center;
+  line-height: 48px;
+  background: #0cb95f;
+  margin: 20px 0 50px 190px;
+}
+
+.footer {
+  height: 130px;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
+.footer .footer_box {
+  width: 1000px;
+  margin: 0 auto;
+  padding-top: 10px;
+}
+.footer * {
+  color: #999;
+}
+.footer ul {
+  height: 26px;
+  line-height: 26px;
+}
+.footer ul li {
+  float: left;
+  padding: 0 11px;
+  position: relative;
+}
+.footer ul li:nth-of-type(-n+13)::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 12px;
+  background: #999;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+}
+.footer p {
+  text-align: center;
+  line-height: 28px;
+}
+.footer .p1 span {
+  margin-right: 9px;
+}
+.footer .p1 span a {
+  margin-left: 5px;
+}

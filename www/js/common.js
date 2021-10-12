@@ -248,6 +248,44 @@ window.onload = function () {
 
         }
     }
+    class UserLogin {
+        constructor() {
+            this.oRegister = document.querySelector('.register');
+            this.oOwn = document.querySelector('.own');
+            this.oL = document.querySelector('.login_left');
+            this.oR = document.querySelector('.regi_right');
+            this.oName = document.querySelector('.reg_name');
+            this.oExit = document.querySelector('.exit');
+
+            this.init();
+            this.addEvent()
+        }
+        init() {
+            this.loginInit()
+        }
+        loginInit() {
+            if (localStorage.getItem('isLogin') === "OK") {
+                this.oRegister.style.display = "none";
+                this.oOwn.style.display = "inline-block";
+                this.oName.innerHTML = JSON.parse(localStorage.getItem("user")).username;
+            } else {
+                this.oRegister.style.display = "inline-block";
+                this.oOwn.style.display = "none";
+            }
+        }
+        addEvent() {
+            const that = this;
+            this.oExit.onclick = function () {
+                that.exitClick()
+            }
+        }
+        exitClick() {
+            localStorage.setItem("isLogin", "false");
+
+        }
+
+    }
     new Common();
-    new Menu()
+    new Menu();
+    new UserLogin();
 }

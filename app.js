@@ -72,9 +72,95 @@ function fn(req, res, obj) {
         case 'listPro':
             listPro(req, res, obj);
             break;
+        case 'register':
+            register(req, res, obj);
+            break;
+        case 'login':
+            login(req, res, obj);
+            break;
+        case 'detail':
+            detail(req, res, obj);
+            break;
         default:
             error(req, res);
     }
+}
+
+function detail(req, res, ajaxData) {
+    fs.readFile("./databases/detail.json", "utf-8", (err, data) => {
+        let obj = {};
+        if (err) {
+            obj.code = 1;
+            obj.title = "产品详情数据获取失败";
+            obj.data = {}
+        } else {
+            obj.code = 0;
+            obj.title = "产品详情数据获取成功";
+            const idx = JSON.parse(data).findIndex(value => value.ID === ajaxData.id)
+            obj.data = JSON.parse(data)[idx];
+        }
+        res.write(JSON.stringify(obj));
+        res.end()
+    })
+}
+
+function login(req, res, ajaxData) {
+    fs.readFile("./databases/user.json", "utf-8", (err, data) => {
+        const userObj = err ? [] : (data ? JSON.parse(data) : [])
+        const obj = {};
+        const idx = userObj.findIndex(value => value.username === ajaxData.username);
+        if (idx === -1) {
+            obj.code = 1;
+            obj.title = "登录失败，该用户不存在！";
+            obj.data = "NOTDATA";
+            res.write(JSON.stringify(obj));
+            res.end();
+        } else {
+            if (userObj[idx].password === ajaxData.password) {
+                obj.code = 0;
+                obj.title = "登录成功";
+                obj.data = userObj[idx];
+            } else {
+                obj.code = 2;
+                obj.title = "登录失败，密码不正确！";
+                obj.data = "Incorrect Password";
+            }
+            res.write(JSON.stringify(obj));
+            res.end();
+        }
+    })
+}
+
+function register(req, res, ajaxData) {
+    fs.readFile("./databases/user.json", "utf-8", (err, data) => {
+        const userObj = err ? [] : (data ? JSON.parse(data) : [])
+        const obj = {};
+        if (userObj.some(value => value.username === ajaxData.username)) {
+            obj.code = 0;
+            obj.title = "注册失败，用户名重复！";
+            obj.data = {};
+            res.write(JSON.stringify(obj));
+            res.end();
+        } else {
+            userObj.push({
+                username: ajaxData.username,
+                password: ajaxData.password,
+                phoneNumber: ajaxData.phoneNumber
+            })
+            fs.writeFile("./databases/user.json", JSON.stringify(userObj), err => {
+                obj.code = 1;
+                obj.title = "注册成功";
+                obj.data = {
+                    username: ajaxData.username,
+                    password: ajaxData.password,
+                    phoneNumber: ajaxData.phoneNumber
+                };
+
+                res.write(JSON.stringify(obj));
+                res.end();
+            })
+        }
+    })
 }
 
 function rf(url, res, type) {

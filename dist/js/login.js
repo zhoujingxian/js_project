@@ -11,20 +11,38 @@
             this.oBtn = Array.from(document.querySelectorAll('.login_top span'));
             this.oIn = document.querySelectorAll('.in')
 
-            this.emailReg = /^[a-z\d]([\da-z][-_\.]?)+@([a-z\d][-\.]?)+$/i;
-            this.phoneReg = /^1[3-9]\d{9}$/;
+            // this.emailReg = /^[a-z\d]([\da-z][-_\.]?)+@([a-z\d][-\.]?)+$/i;
+            // this.phoneReg = /^1[3-9]\d{9}$/;
+            this.url = "http://localhost:3000/api"
             this.init();
             this.addEvent();
         }
         addEvent() {
             const that = this;
             this.oSubmit.onclick = function () {
-                that.judge()
+                that.judge();
             }
             this.oBtn.forEach((value, index) => {
                 value.onclick = function () {
                     that.idx = index;
                     that.state(value, index);
+                }
+            })
+        }
+        verSub() {
+            ajax({
+                url: this.url,
+                data: {
+                    type: "login",
+                    username: this.oUsername.value,
+                    password: this.oPassword.value
+                },
+                success: res => {
+                    if (res.code) {
+                        this.userJudge(res.title)
+                    } else {
+                        this.successLogin(res.data)
+                    }
                 }
             })
         }
@@ -47,64 +65,42 @@
                 this.oPassword = document.getElementById('password')
             }
         }
+        successLogin(data) {
+            this.oTitle.style.display = "none";
+            localStorage.setItem("isLogin", "OK");
+            data.prev = this.oCheck.checked ? true : false;
+            localStorage.setItem("user", JSON.stringify(data));
+            location.href = "../index.html";
+        }
         judge() {
             if (this.oXy.checked) {
-                this.userJudge()
+                this.verSub()
             } else {
                 alert("请阅读并勾选阅读协议");
             }
 
         }
-        userJudge() {
-            let uName = this.oUsername.value;
-            let passWord = this.oPassword.value;
-            if (uName && passWord) {
-                if (this.emailReg.test(uName) || this.phoneReg.test(uName)) {
-                    this.oTitle.style.display = "none";
-                    if (!this.idx)
-                        this.set()
-                } else {
-                    this.oTitle.children[1].innerHTML = "用户名或密码错误";
-                    this.oTitle.style.display = "block"
-                }
-            } else {
-                this.oTitle.children[1].innerHTML = "请输入完整用户登录信息";
-                this.oTitle.style.display = "block"
-            }
-        }
-        set() {
-            if (this.oCheck.checked) {
-                setCookie("user", JSON.stringify({
-                    username: this.oUsername.value,
-                    password: this.oPassword.value
-                }), {
-                    expires: '',
-                    path: ''
-                })
-            }
+        userJudge(title) {
+            this.oTitle.children[1].innerHTML = title;
+            this.oTitle.style.display = "block";
+
         }
         init() {
-            if (document.cookie.includes("user")) {
-                this.cook = JSON.parse(getCookie("user"));
-                this.oCheck.checked = "checked";
-                this.oXy.checked = "checked";
-            } else {
-                this.cook = {
-                    userNmae: '',
-                    password: ''
-                };
-                this.oXy.checked = "";
+            if (localStorage.getItem("user")) {
+                this.storage = JSON.parse(localStorage.getItem("user"))
+                this.oUsername.value = this.storage.username;
+                if (JSON.parse(localStorage.getItem("user")).prev) {
+                    this.textShow()
+                }
             }
-            this.cook = document.cookie.includes("user") ? JSON.parse(getCookie("user")) : {
-                username: '',
-                password: ''
-            };
-            this.textShow();
         }
 
         textShow() {
-            this.oUsername.value = this.cook.username;
-            this.oPassword.value = this.cook.password;
+
+
+            this.oPassword.value = this.storage.password;
+            this.oCheck.checked = "checked";
+            this.oXy.checked = "checked";
         }
 
     }

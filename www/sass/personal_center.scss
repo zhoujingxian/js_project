@@ -1,0 +1,210 @@
+$color:(#0cb95f #0aa454 #e5e5e5);
+
+.navBox {
+    background: nth($color, 1);
+
+    .menu>a {
+        background: nth($color, 2);
+    }
+
+    .menu2 {
+        display: none;
+    }
+
+    .nav_content {
+        a {
+            color: #fff;
+        }
+
+        li:hover {
+            a {
+                color: #fff;
+            }
+        }
+
+    }
+}
+
+.main {
+    a {
+        &:hover {
+            color: nth($color, 1);
+            text-decoration: underline;
+        }
+    }
+
+    .main_header {
+        h3 {
+            height: 60px;
+            line-height: 60px;
+            font-weight: 400;
+            font-size: 16px;
+            word-spacing: 2px;
+        }
+    }
+
+    .main_left {
+        float: left;
+        width: 60px;
+        height: 500px;
+        text-align: center;
+
+        li {
+            height: 80px;
+            margin: 10px 0;
+
+            div {
+                width: 50px;
+                height: 50px;
+                margin: 0 5px;
+            }
+
+            &:nth-of-type(1) {
+                border-bottom: 1px solid nth($color, 3);
+
+                div {
+                    background: {
+                        image: url(../images/personal/touxiang1.png);
+                        size: 50px 50px
+                    }
+                }
+            }
+
+            &:nth-of-type(n+2) {
+                div {
+                    background: url(../images/personal/usercenter_biginco.jpg);
+                }
+            }
+
+            &:nth-of-type(2) {
+                div {
+                    background-position: 0 -50px;
+
+                }
+            }
+        }
+
+        h3 {
+            font-size: 13px;
+        }
+    }
+
+    .main_right {
+        height: 617px;
+        overflow: hidden;
+        margin-left: 100px;
+        border: 1px solid #ccc;
+
+        .r_header {
+            float: left;
+            width: 80px;
+            height: 100%;
+            background: linear-gradient(to right, #fff, #f8f8f8 20%);
+
+            .rh_nav {
+                width: 50px;
+                height: 50px;
+                background: url(../images/personal/iconliaobiao.png) right 0;
+            }
+        }
+
+        .r_cont {
+            float: left;
+            padding: 40px 50px;
+
+            h2 {
+                margin-bottom: 30px;
+            }
+
+            .w_name {
+                font-size: 14px;
+
+            }
+
+            .w_cent {
+                display: inline-block;
+                width: 130px;
+                height: 12px;
+                position: relative;
+                border: 1px solid nth($color, 3);
+
+                span {
+                    width: 70%;
+                    height: 12px;
+                    background: linear-gradient(nth($color, 1), #2c9c2c);
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+            }
+
+            .w_right {
+                font-size: 12px;
+                font-weight: 400;
+                margin-left: 20px
+            }
+        }
+
+        .r_left {
+            width: 80px;
+            float: left;
+
+            .left_style {
+                font-size: 13px;
+                color: #000;
+                font-weight: 600;
+            }
+
+            li {
+                height: 30px;
+                text-align: right;
+                padding-right: 10px
+            }
+        }
+
+        .r_right {
+            float: left;
+            border-left: 1px solid nth($color, 3);
+            padding: 40px;
+
+            li {
+                height: 40px;
+                line-height: 40px;
+
+                &:nth-of-type(1) {
+                    height: 60px;
+
+                    img {
+                        width: 50px;
+                        height: 50px;
+
+                    }
+
+                    span {
+                        display: inline-block;
+                        // width: 60px;    
+                        height: 26px;
+                        background: nth($color, 1);
+                        color: #fff;
+                        font-size: 14px;
+                        text-align: center;
+                        line-height: 26px;
+                        padding: 0 10px;
+                        border-radius: 2px;
+                    }
+                }
+
+                &:nth-of-type(n+2) {
+                    color: #000;
+                    font-size: 14px;
+
+                    margin-top:20px span {
+                        margin-left: 10px;
+
+                    }
+                }
+            }
+        }
+
+    }
+}

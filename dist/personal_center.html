@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人中心</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/personal_center.css">
+</head>
+<script src="./public/isLogin.js"></script>
+
+<body>
+    <!-- 顶部公共区域 -->
+    <div class="topBox"></div>
+    <div class="headerBox"></div>
+
+    <!-- 导航栏区域 -->
+    <div class="navBox"></div>
+
+    <div class="main w clearfix">
+        <div class="main_header">
+            <h3><a href="index.html">首页</a>&nbsp;&gt;&nbsp;账号设置</h3>
+        </div>
+        <div class="main_left">
+            <ul>
+                <li>
+                    <div></div>
+                    <h3>账号设置</h3>
+                </li>
+                <li>
+                    <div></div>
+                    <h3>我的订单</h3>
+                </li>
+            </ul>
+        </div>
+        <div class="main_right">
+            <div class="r_header">
+                <div class="rh_nav"></div>
+            </div>
+            <div class="r_cont">
+                <h2>
+                    <span class="w_name">账号设置</span>
+                    <span class="w_cent"><span></span></span>
+                    <span class="w_right">资料完成度70%</span>
+                </h2>
+                <div class="r_left">
+                    <ul>
+                        <li class="left_style">基本信息</li>
+                        <li>地址管理</li>
+                        <li>修改密码</li>
+                        <li>实名认证</li>
+
+                    </ul>
+                </div>
+                <div class="r_right">
+                    <ul>
+                        <li>
+                            <img src="./images/personal/touxiang1.png" alt="">
+                            <span>修改头像</span>
+                        </li>
+                        <li>用户名：<span class="user_name"></span></li>
+                        <li>手机：<span class="user_phone"></span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部区域 -->
+    <div class="footerBox"></div>
+</body>
+<script src="./libs/jquery.js"></script>
+<script>
+    $(".topBox").load("http://localhost:3000/common.html .header_top");
+    $(".headerBox").load("http://localhost:3000/common.html .header");
+    $(".navBox").load("http://localhost:3000/common.html .nav")
+    $(".footerBox").load("http://localhost:3000/common.html .footer")
+</script>
+<script src="./public/ajax.js"></script>
+<script src="./public/jsonp.js"></script>
+<script src="./js/common.js"></script>
+<script src="./js/personal_center.js"></script>
+
+</html>

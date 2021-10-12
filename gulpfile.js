@@ -27,9 +27,15 @@ exports.watch = function () {
         return src("./www/images/**/*")
             .pipe(dest("./dist/images"))
     })
+
     watch("./www/libs/*.js", function () {
         return src("./www/libs/*.js")
             .pipe(dest("./dist/libs"))
+    })
+
+    watch("./www/public/*.js", function () {
+        return src("./www/public/*.js")
+            .pipe(dest("./dist/public"))
     })
 
 }

@@ -10,6 +10,8 @@
             this.oProduct = document.querySelector('.pro_content ul');
             this.oPageUl = document.querySelector('.page ul');
 
+
+
             this.url = "http://localhost:3000/api";
             this.SYM = {
                 hide: Symbol(),
@@ -126,7 +128,7 @@
         pageNone() {
             this.pageLi[this.prev].id = "";
         }
-        // 页码点击事件
+        // 页码点击执行
         oPageLiClick(target, index) {
             this.pageNone();
             this.index = index;
@@ -164,12 +166,15 @@
             }
             this.omitShow();
         }
+        // 页码移动后显示
         pageChange(idx) {
             this.pageLi.forEach(value => {
                 value.innerHTML = parseInt(value.innerHTML) + idx;
             })
 
         }
+
+        // 展开列表
         showStatus(value) {
             if (this.symPrev === this.SYM.show) {
                 this.unfold(value);
@@ -196,6 +201,7 @@
             value.children[0].style.backgroundPosition = "-123px 0";
         }
 
+        // 初始获取数据
         listPro() {
             ajax({
                 url: this.url,
@@ -217,10 +223,20 @@
         listSelect() {
             let str = "";
             for (let i = (this.index - 1) * this.CONT; i < this.index * this.CONT && i < this.listData.length; i++) {
-                str += `<li><a href="" class="pro_box"><img src="./images/detail/${this.listData[i].imgM}m0.jpg" alt="" class="pro_img"><div class="pro_price">${this.listData[i].price}</div><a href="" class="pro_a">${this.listData[i].brand} ${this.listData[i].name}</a><p>规格: ${this.listData[i].specification}</p><p>剂型: ${this.listData[i].type}</p><p>批准文号: <img src="./images/list/list_icon0.jpg" alt=""></p><div class="pro_f">生产厂家:${this.listData[i].firm}</div><div class="pro_b"><span>共<i>${this.listData[i].num}</i>个商家有售</span><a href="">查看详情</a></div></a></li>`
+                str += `<li my_id="${this.listData[i].ID}"><a href="javascript:void(0)" class="pro_box"><img src="./images/detail/${this.listData[i].imgM}m0.jpg" alt="" class="pro_img"><div class="pro_price">${this.listData[i].price}</div><a href="" class="pro_a">${this.listData[i].brand} ${this.listData[i].name}</a><p>规格: ${this.listData[i].specification}</p><p>剂型: ${this.listData[i].type}</p><p>批准文号: <img src="./images/list/list_icon0.jpg" alt=""></p><div class="pro_f">生产厂家:${this.listData[i].firm}</div><div class="pro_b"><span>共<i>${this.listData[i].num}</i>个商家有售</span><a href="">查看详情</a></div></a></li>`
             }
 
             this.oProduct.innerHTML = str;
+            this.oProLi = Array.from(this.oProduct.children);
+            this.addProLi();
+        }
+        addProLi() {
+            this.oProLi.forEach((value, index) => {
+                value.onclick = function () {
+                    localStorage.setItem("product", value.getAttribute('my_id'))
+                    location.href = "../detail_page.html"
+                }
+            })
         }
         sitems() {
             ajax({

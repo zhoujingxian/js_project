@@ -1,0 +1,152 @@
+.navBox {
+  background: #0cb95f;
+}
+.navBox .menu > a {
+  background: #0aa454;
+}
+.navBox .menu2 {
+  display: none;
+}
+.navBox .nav_content a {
+  color: #fff;
+}
+.navBox .nav_content li:hover a {
+  color: #fff;
+}
+
+.main a:hover {
+  color: #0cb95f;
+  text-decoration: underline;
+}
+.main .main_header h3 {
+  height: 60px;
+  line-height: 60px;
+  font-weight: 400;
+  font-size: 16px;
+  word-spacing: 2px;
+}
+.main .main_left {
+  float: left;
+  width: 60px;
+  height: 500px;
+  text-align: center;
+}
+.main .main_left li {
+  height: 80px;
+  margin: 10px 0;
+}
+.main .main_left li div {
+  width: 50px;
+  height: 50px;
+  margin: 0 5px;
+}
+.main .main_left li:nth-of-type(1) {
+  border-bottom: 1px solid #e5e5e5;
+}
+.main .main_left li:nth-of-type(1) div {
+  background-image: url(../images/personal/touxiang1.png);
+  background-size: 50px 50px;
+}
+.main .main_left li:nth-of-type(n+2) div {
+  background: url(../images/personal/usercenter_biginco.jpg);
+}
+.main .main_left li:nth-of-type(2) div {
+  background-position: 0 -50px;
+}
+.main .main_left h3 {
+  font-size: 13px;
+}
+.main .main_right {
+  height: 617px;
+  overflow: hidden;
+  margin-left: 100px;
+  border: 1px solid #ccc;
+}
+.main .main_right .r_header {
+  float: left;
+  width: 80px;
+  height: 100%;
+  background: linear-gradient(to right, #fff, #f8f8f8 20%);
+}
+.main .main_right .r_header .rh_nav {
+  width: 50px;
+  height: 50px;
+  background: url(../images/personal/iconliaobiao.png) right 0;
+}
+.main .main_right .r_cont {
+  float: left;
+  padding: 40px 50px;
+}
+.main .main_right .r_cont h2 {
+  margin-bottom: 30px;
+}
+.main .main_right .r_cont .w_name {
+  font-size: 14px;
+}
+.main .main_right .r_cont .w_cent {
+  display: inline-block;
+  width: 130px;
+  height: 12px;
+  position: relative;
+  border: 1px solid #e5e5e5;
+}
+.main .main_right .r_cont .w_cent span {
+  width: 70%;
+  height: 12px;
+  background: linear-gradient(#0cb95f, #2c9c2c);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.main .main_right .r_cont .w_right {
+  font-size: 12px;
+  font-weight: 400;
+  margin-left: 20px;
+}
+.main .main_right .r_left {
+  width: 80px;
+  float: left;
+}
+.main .main_right .r_left .left_style {
+  font-size: 13px;
+  color: #000;
+  font-weight: 600;
+}
+.main .main_right .r_left li {
+  height: 30px;
+  text-align: right;
+  padding-right: 10px;
+}
+.main .main_right .r_right {
+  float: left;
+  border-left: 1px solid #e5e5e5;
+  padding: 40px;
+}
+.main .main_right .r_right li {
+  height: 40px;
+  line-height: 40px;
+}
+.main .main_right .r_right li:nth-of-type(1) {
+  height: 60px;
+}
+.main .main_right .r_right li:nth-of-type(1) img {
+  width: 50px;
+  height: 50px;
+}
+.main .main_right .r_right li:nth-of-type(1) span {
+  display: inline-block;
+  height: 26px;
+  background: #0cb95f;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  line-height: 26px;
+  padding: 0 10px;
+  border-radius: 2px;
+}
+.main .main_right .r_right li:nth-of-type(n+2) {
+  color: #000;
+  font-size: 14px;
+  margin-top: 20px span;
+  margin-top-margin-left: 10px;
+}

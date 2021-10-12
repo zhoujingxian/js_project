@@ -9,20 +9,40 @@
             this.mBox = document.querySelector('.zoomPad div');
             this.lDiv = document.querySelector('.big');
             this.lImg = document.querySelector('.big img');
-            this.sImg = Array.from(document.querySelectorAll('.pic_img li img'));
+
             this.pLeft = document.querySelector('.pic_left');
             this.pRight = document.querySelector('.pic_right');
+            this.sBox = document.querySelector('.pic_img');
 
+            this.oText = document.querySelectorAll('.para li dd')
+            this.oH2 = document.querySelector('.main_center h3 span')
+            this.oPrice = document.querySelector('.price')
             this.prev = 0;
+            this.url = "http://localhost:3000/api";
             this.addEvent();
             this.init();
         }
         init() {
-            // ajax({
+            ajax({
+                url: this.url,
+                data: {
+                    type: "detail",
+                    id: localStorage.getItem('product')
+                },
+                success: res => {
+                    console.log(res.data)
+                    if (res.code) {
+                        console.log(res.title);
+                    } else {
+                        console.log(res.title);
+                        this.proData = res.data;
+                        this.proSelect();
+                    }
+                }
+            })
 
-            // })
-            this.sImg[this.prev].parentNode.style.borderColor = "#e50000"
         }
+
         addEvent() {
             const that = this;
             this.mDiv.onmouseenter = function () {
@@ -40,11 +60,7 @@
                 }
                 that.move(coord);
             }
-            this.sImg.forEach((value, index) => {
-                value.onclick = () => {
-                    this.cut(value, index);
-                }
-            })
+
             this.pLeft.onmousedown = function () {
                 that.btnLeft();
             }
@@ -52,6 +68,48 @@
                 that.btnRight();
             }
         }
+
+        proSelect() {
+            this.sImgRender();
+            this.textRender();
+        }
+        // 商品文本渲染
+        textRender() {
+            this.oText[0].innerHTML = this.proData.name;
+            this.oText[1].innerHTML = this.proData.brand;
+            this.oText[2].innerHTML = this.proData.specification;
+            this.oText[3].innerHTML = this.proData.type;
+            this.oText[4].innerHTML = this.proData.firm;
+            this.oH2.innerHTML = this.proData.brand + "&nbsp;" + this.proData.name;
+            this.oPrice.innerHTML = this.proData.price;
+        }
+        // 小图渲染
+        sImgRender() {
+            let str = '';
+            for (let i = 0; i < 5; i++) {
+                str += `<li><img src="./images/detail/${this.proData.imgM}s${i}.jpg"></li>`
+            }
+            this.sBox.innerHTML = str;
+            this.sImg = Array.from(document.querySelectorAll('.pic_img li img'));
+            this.sImgClick();
+            this.imgInit();
+
+        }
+        // 图片初始化
+        imgInit() {
+            this.sImg[this.prev].parentNode.style.borderColor = "#e50000";
+            this.mImg.src = `images/detail/${this.proData.imgM}m${this.prev}.jpg`;
+            this.lImg.src = `images/detail/${this.proData.imgM}m${this.prev}.jpg`;
+        }
+        // 小图片点击事件
+        sImgClick() {
+            this.sImg.forEach((value, index) => {
+                value.onclick = () => {
+                    this.cut(value, index);
+                }
+            })
+        }
+        // 当前图片左移
         btnLeft() {
             if (this.prev !== 0) {
                 this.sImg[this.prev].parentNode.style.borderColor = "#e5e5e5"
@@ -59,6 +117,7 @@
                 this.cut(this.sImg[this.prev], this.prev)
             }
         }
+        // 当前图片右移
         btnRight() {
             if (this.prev !== this.sImg.length - 1) {
                 this.sImg[this.prev].parentNode.style.borderColor = "#e5e5e5"
@@ -67,13 +126,15 @@
             }
 
         }
+        // 切换大图
         cut(value, index) {
-            this.mImg.src = `images/detail/dglm${index}.jpg`;
-            this.lImg.src = `images/detail/dgll${index}.jpg`;
+            this.mImg.src = `images/detail/${this.proData.imgM}m${index}.jpg`;
+            this.lImg.src = `images/detail/${this.proData.imgM}m${index}.jpg`;
             this.sImg[this.prev].parentNode.style.borderColor = "#e5e5e5"
             value.parentNode.style.borderColor = "#e16070";
             this.prev = index;
         }
+        // 放大镜效果
         move(coord) {
             let msLeft = coord.x - this.msWidth / 2;
             let msTop = coord.y - this.msHeight / 2;
@@ -92,6 +153,7 @@
             }
             this.bigmove(ratio);
         }
+        // 最大图的移动
         bigmove(ratio) {
             this.lImg.style.left = -ratio.rleft * this.liWidth + 'px';
             this.lImg.style.top = -ratio.rtop * this.liHeight + 'px';
