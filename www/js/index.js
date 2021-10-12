@@ -381,9 +381,21 @@
         xsgSelect(data) {
             let str = "";
             for (let i of data) {
-                str += `<li><a href=""><div><img src="${i.img}" alt=""></div><h3>${i.name}</h3><div class="cont_spec">${i.specification}</div><div class="cont_pri">${i.price}</div></a></li>`
+                str += `<li><a href="./detail_page.html?id=${i.ID}"><div><img src="${i.img}" alt=""></div><h3>${i.name}</h3><div class="cont_spec">${i.specification}</div><div class="cont_pri">${i.price}</div></a></li>`
             }
             this.oXsg.innerHTML = str;
+            this.oProLi = Array.from(this.oXsg.children);
+            this.addProLi();
+        }
+        addProLi() {
+            this.oProLi.forEach((value, index) => {
+                value.onclick = function () {
+                    console.log(value)
+
+                    localStorage.setItem("product", value.getAttribute('my_id'))
+                    location.href = "../detail_page.html"
+                }
+            })
         }
         // 在线问诊
         zxwz() {

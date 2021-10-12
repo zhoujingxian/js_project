@@ -24,7 +24,7 @@ $color:(#e5e5e5 #0cb95f #fffbe9 #F2B305 #999 #e50000);
         right: 0px;
 
         background: {
-            image: url(../images/shopping/step.png);
+            image: url(../images/cart/step.png);
             position: -29px -14px;
         }
     }
@@ -64,6 +64,7 @@ $color:(#e5e5e5 #0cb95f #fffbe9 #F2B305 #999 #e50000);
         padding-right: 50px;
     }
 
+
     .warn {
         height: 36px;
         line-height: 36px;
@@ -85,6 +86,17 @@ $color:(#e5e5e5 #0cb95f #fffbe9 #F2B305 #999 #e50000);
         thead {
             height: 41px;
             background: #f4f4f4;
+
+            .w8 {
+                a {
+                    font-size: 14px;
+
+                    &:hover {
+                        color: nth($color, 2);
+                        text-decoration: underline;
+                    }
+                }
+            }
         }
 
         thead,
@@ -94,7 +106,10 @@ $color:(#e5e5e5 #0cb95f #fffbe9 #F2B305 #999 #e50000);
         }
 
         tbody {
-            height: 113px;
+
+            tr {
+                height: 120px;
+            }
 
             img {
                 width: 72px;
@@ -145,11 +160,11 @@ $color:(#e5e5e5 #0cb95f #fffbe9 #F2B305 #999 #e50000);
                     border: 1px solid nth($color, 1);
                 }
 
-                .sub {
+                .count_sub {
                     background-position: -166px -80px;
                 }
 
-                .add {
+                .count_add {
                     background-position: -192px -80px;
                 }
 
@@ -157,6 +172,7 @@ $color:(#e5e5e5 #0cb95f #fffbe9 #F2B305 #999 #e50000);
 
             .w6 span {
                 color: nth($color, 6);
+                font-size: 14px;
             }
 
             .w7 input {
@@ -165,6 +181,9 @@ $color:(#e5e5e5 #0cb95f #fffbe9 #F2B305 #999 #e50000);
                 background: #fe1703;
                 color: nth($color, 3)
             }
+
+
+
         }
     }
 

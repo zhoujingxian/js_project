@@ -333,6 +333,7 @@
   font-size: 18px;
   text-align: center;
   line-height: 40px;
+  cursor: pointer;
 }
 .main .main_content .main_center .buy .buy_now {
   color: #e50000;

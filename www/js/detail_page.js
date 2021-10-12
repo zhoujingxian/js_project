@@ -17,7 +17,13 @@
             this.oText = document.querySelectorAll('.para li dd')
             this.oH2 = document.querySelector('.main_center h3 span')
             this.oPrice = document.querySelector('.price')
+            this.buyAdd = document.querySelector('.buy_add');
+
+            this.oSub = document.querySelector('.sub');
+            this.oAdd = document.querySelector('.add');
+            this.oCount = document.getElementById('count')
             this.prev = 0;
+            this.id = location.search.split("=")[1];
             this.url = "http://localhost:3000/api";
             this.addEvent();
             this.init();
@@ -27,10 +33,9 @@
                 url: this.url,
                 data: {
                     type: "detail",
-                    id: localStorage.getItem('product')
+                    id: this.id
                 },
                 success: res => {
-                    console.log(res.data)
                     if (res.code) {
                         console.log(res.title);
                     } else {
@@ -41,7 +46,9 @@
                 }
             })
 
+            this.setTime();
         }
+
 
         addEvent() {
             const that = this;
@@ -67,8 +74,56 @@
             this.pRight.onmousedown = function () {
                 that.btnRight();
             }
-        }
 
+            this.buyAdd.onclick = function () {
+                that.buyAddClick();
+            }
+            this.oAdd.onclick = function () {
+                that.countChange(1);
+            }
+            this.oSub.onclick = function () {
+                that.countChange(-1);
+            }
+        }
+        countChange(index) {
+            if (parseInt(this.oCount.value) + index > -1)
+                this.oCount.value = parseInt(this.oCount.value) + index;
+        }
+        buyAddClick() {
+            if (this.oCount.value !== "0") {
+                let goods = JSON.parse(localStorage.getItem("cart"));
+                if (localStorage.getItem('cart')) {
+                    const idx = goods.findIndex(value => value.id === this.id)
+                    if (idx === -1) {
+                        goods.push(this.setIn())
+                    } else {
+                        goods[idx].count = parseInt(goods[idx].count) + parseInt(this.oCount.value)
+                    }
+                    localStorage.setItem('cart', JSON.stringify(goods))
+
+                } else {
+                    localStorage.setItem('cart', JSON.stringify([this.setIn()]))
+                }
+                this.oCount.value = 0;
+                let s = 0;
+                goods.forEach(value => {
+                    s += parseInt(value.count)
+                })
+                this.oEm.innerHTML = `(${s})`
+            }
+        }
+        setTime() {
+            setTimeout(() => {
+                this.oEm = document.querySelector('.sh_count')
+            }, 10);
+        }
+        setIn() {
+            return {
+                id: this.id,
+                count: this.oCount.value
+            }
+
+        }
         proSelect() {
             this.sImgRender();
             this.textRender();
@@ -81,7 +136,7 @@
             this.oText[3].innerHTML = this.proData.type;
             this.oText[4].innerHTML = this.proData.firm;
             this.oH2.innerHTML = this.proData.brand + "&nbsp;" + this.proData.name;
-            this.oPrice.innerHTML = this.proData.price;
+            this.oPrice.innerHTML = "￥" + this.proData.price;
         }
         // 小图渲染
         sImgRender() {

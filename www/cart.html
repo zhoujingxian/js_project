@@ -8,7 +8,7 @@
     <title>购物车</title>
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/common.css">
-    <link rel="stylesheet" href="./css/shopping.css">
+    <link rel="stylesheet" href="./css/cart.css">
 </head>
 <script src="./public/isLogin.js"></script>
 
@@ -44,18 +44,18 @@
                 <thead>
                     <tr>
                         <td class="w1"><input type="checkbox" name="" id=""></td>
-                        <td class="w8" colspan=3><a href="">颍上县康伴大药房</a></td>
+                        <td class="w8" colspan=3><a href="./index.html">药房网商城</a></td>
                         <td class="w9" colspan=3>
-                            <img src="./images/shopping/icon_cart_post.jpg" alt="">
+                            <img src="./images/cart/icon_cart_post.jpg" alt="">
                             <span>满79元包邮</span>
                         </td>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
+                <tbody class="goods">
+                    <!-- <tr>
                         <td class="w1"><input type="checkbox" name="" id=""></td>
                         <td class="w2">
-                            <img src="./images/shopping/d1.jpg" alt="">
+                            <img src="./images/cart/d1.jpg" alt="">
                         </td>
                         <td class="w3">
                             <p><a href=""><a href=""><i class="cf"></i><em>枢芬 巴氯芬片(片剂)</em></a></a></p>
@@ -67,9 +67,9 @@
                         </td>
                         <td class="w5">
                             <div>
-                                <button class="sub"></button>
+                                <button class="count_sub"></button>
                                 <input type="text" name="" id="">
-                                <button class="add"></button>
+                                <button class="count_add"></button>
                             </div>
                         </td>
                         <td class="w6">
@@ -78,7 +78,7 @@
                         <td class="w7">
                             <input type="button" value="删除">
                         </td>
-                    </tr>
+                    </tr> -->
                 </tbody>
             </table>
         </div>
@@ -109,6 +109,7 @@
     $(".footerBox").load("http://localhost:3000/common.html .footer")
 </script>
 <script src="./public/ajax.js"></script>
-<script src="./libs/require.js" data-main="./js/shoppingMain"></script>
+<script src="./libs/require.js" data-main="./js/cartMain"></script>
+
 
 </html>

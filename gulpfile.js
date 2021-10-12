@@ -38,4 +38,9 @@ exports.watch = function () {
             .pipe(dest("./dist/public"))
     })
 
+    watch("./www/modules/*.js", function () {
+        return src("./www/modules/*.js")
+            .pipe(dest("./dist/modules"))
+    })
+
 }

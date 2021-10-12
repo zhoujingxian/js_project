@@ -1,5 +1,6 @@
 ;
 (function () {
+    "use strict"
     class Login {
         constructor() {
             this.oUsername = document.getElementById('username');

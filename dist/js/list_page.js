@@ -85,7 +85,7 @@
         }
         // 右翻页
         turningRight() {
-            const index = this.pageLi[this.pageLi.length - 1].innerHTML
+            const index = parseInt(this.pageLi[this.pageLi.length - 1].innerHTML);
             if (index + 5 < this.num) {
                 this.turnChange(index + 1, index + 5);
             } else {
@@ -223,21 +223,14 @@
         listSelect() {
             let str = "";
             for (let i = (this.index - 1) * this.CONT; i < this.index * this.CONT && i < this.listData.length; i++) {
-                str += `<li my_id="${this.listData[i].ID}"><a href="javascript:void(0)" class="pro_box"><img src="./images/detail/${this.listData[i].imgM}m0.jpg" alt="" class="pro_img"><div class="pro_price">${this.listData[i].price}</div><a href="" class="pro_a">${this.listData[i].brand} ${this.listData[i].name}</a><p>规格: ${this.listData[i].specification}</p><p>剂型: ${this.listData[i].type}</p><p>批准文号: <img src="./images/list/list_icon0.jpg" alt=""></p><div class="pro_f">生产厂家:${this.listData[i].firm}</div><div class="pro_b"><span>共<i>${this.listData[i].num}</i>个商家有售</span><a href="">查看详情</a></div></a></li>`
+                str += `<li><a href="./detail_page.html?id=${this.listData[i].ID}" class="pro_box"><img src="./images/detail/${this.listData[i].imgM}m0.jpg" alt="" class="pro_img"><div class="pro_price">￥${this.listData[i].price}</div><a href="" class="pro_a">${this.listData[i].brand} ${this.listData[i].name}</a><p>规格: ${this.listData[i].specification}</p><p>剂型: ${this.listData[i].type}</p><p>批准文号: <img src="./images/list/list_icon0.jpg" alt=""></p><div class="pro_f">生产厂家:${this.listData[i].firm}</div><div class="pro_b"><span>共<i>${this.listData[i].num}</i>个商家有售</span><a href="">查看详情</a></div></a></li>`
             }
 
             this.oProduct.innerHTML = str;
             this.oProLi = Array.from(this.oProduct.children);
-            this.addProLi();
+
         }
-        addProLi() {
-            this.oProLi.forEach((value, index) => {
-                value.onclick = function () {
-                    localStorage.setItem("product", value.getAttribute('my_id'))
-                    location.href = "../detail_page.html"
-                }
-            })
-        }
+
         sitems() {
             ajax({
                 url: this.url,

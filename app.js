@@ -81,9 +81,16 @@ function fn(req, res, obj) {
         case 'detail':
             detail(req, res, obj);
             break;
+        case 'getGoods':
+            getGoods(req, res, obj);
+            break;
         default:
             error(req, res);
     }
+}
+
+function getGoods(req, res, ajaxData) {
+    rf('./databases/detail.json', res, "购物车数据");
 }
 
 function detail(req, res, ajaxData) {

@@ -1,0 +1,226 @@
+.header {
+  height: 120px;
+}
+.header .sub {
+  width: 112px;
+  height: 55px;
+  left: 220px;
+  border-left: 1px solid #e5e5e5;
+  padding-left: 15px;
+}
+.header .sub span {
+  line-height: 55px;
+  font-size: 24px;
+  font-weight: bolder;
+}
+.header .step {
+  width: 425px;
+  height: 70px;
+  right: 0px;
+  background-image: url(../images/cart/step.png);
+  background-position: -29px -14px;
+}
+
+.main .main_logo {
+  width: 106px;
+  height: 50px;
+  line-height: 50px;
+  cursor: pointer;
+  background: #0cb95f;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+}
+.main .main_header {
+  height: 50px;
+  border: 1px solid #e5e5e5;
+  border-top-color: #0cb95f;
+}
+.main .w1 {
+  width: 50px;
+  text-align: center;
+}
+.main .w2 {
+  width: 100px;
+}
+.main .w3 {
+  width: 388px;
+}
+.main .w4 {
+  width: 240px;
+  text-align: right;
+}
+.main .w5 {
+  width: 130px;
+  text-align: center;
+}
+.main .w6 {
+  width: 130px;
+  text-align: center;
+}
+.main .w7 {
+  width: 150px;
+  text-align: center;
+}
+.main .w8 {
+  width: 728px;
+}
+.main .w9 {
+  width: 410px;
+}
+.main .w4 {
+  padding-right: 50px;
+}
+.main .warn {
+  height: 36px;
+  line-height: 36px;
+  background: #fffbe9;
+  color: #F2B305;
+  padding-left: 40px;
+  border: 1px solid #e5e5e5;
+  margin: 10px 0;
+}
+.main .content {
+  margin-bottom: 10px;
+}
+.main .content table {
+  border-collapse: collapse;
+}
+.main .content thead {
+  height: 41px;
+  background: #f4f4f4;
+}
+.main .content thead .w8 a {
+  font-size: 14px;
+}
+.main .content thead .w8 a:hover {
+  color: #0cb95f;
+  text-decoration: underline;
+}
+.main .content thead,
+.main .content tbody,
+.main .content tr {
+  border: 1px solid #e5e5e5;
+}
+.main .content tbody tr {
+  height: 120px;
+}
+.main .content tbody img {
+  width: 72px;
+  height: 72px;
+  border: 1px solid #e5e5e5;
+}
+.main .content tbody .cf {
+  display: inline-block;
+  width: 33px;
+  height: 16px;
+  background: url(../images/index/icons.png) no-repeat -222px -26px;
+  vertical-align: middle;
+}
+.main .content tbody p {
+  color: #999;
+  line-height: 21px;
+}
+.main .content tbody p em {
+  color: #999;
+}
+.main .content tbody .w5 div {
+  width: 90px;
+  margin: 0 auto;
+}
+.main .content tbody .w5 div > * {
+  float: left;
+}
+.main .content tbody .w5 input {
+  width: 42px;
+  height: 22px;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  text-align: center;
+}
+.main .content tbody .w5 button {
+  width: 24px;
+  height: 22px;
+  background: url(../images/index/icons.png);
+  border: 1px solid #e5e5e5;
+}
+.main .content tbody .w5 .count_sub {
+  background-position: -166px -80px;
+}
+.main .content tbody .w5 .count_add {
+  background-position: -192px -80px;
+}
+.main .content tbody .w6 span {
+  color: #e50000;
+  font-size: 14px;
+}
+.main .content tbody .w7 input {
+  width: 50px;
+  height: 30px;
+  background: #fe1703;
+  color: #fffbe9;
+}
+
+.sum {
+  background: #fff;
+  position: sticky;
+  bottom: 0;
+  height: 70px;
+  line-height: 70px;
+}
+.sum .w {
+  border: 1px solid #e5e5e5;
+}
+.sum .w > * {
+  float: left;
+}
+.sum .sum_check {
+  display: inline-block;
+  width: 90px;
+  height: 70px;
+  margin-right: 10px;
+}
+.sum .sum_check input {
+  width: 16px;
+  height: 16px;
+  margin: 0 13px 0 17px;
+}
+.sum .sum_check label {
+  font-size: 16px;
+}
+.sum #allDel {
+  cursor: pointer;
+  margin: 0 16px;
+}
+.sum #goon {
+  padding: 0 20px;
+  color: #0cb95f;
+}
+.sum #goon:hover {
+  text-decoration: underline;
+}
+.sum .sum_right {
+  width: 768px;
+  text-align: right;
+  height: 70px;
+}
+.sum .sum_right .title {
+  font-size: 14px;
+}
+.sum .sum_right .price {
+  font-size: 24px;
+  font-weight: bolder;
+  color: #e50000;
+}
+.sum .close {
+  float: right;
+  width: 120px;
+  height: 60px;
+  line-height: 60px;
+  background: #e50000;
+  color: #fff;
+  text-align: center;
+  font-size: 22px;
+  margin-top: 5px;
+  margin-right: 10px;
+}
