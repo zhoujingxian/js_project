@@ -89,6 +89,8 @@ function fn(req, res, obj) {
     }
 }
 
+
+
 function getGoods(req, res, ajaxData) {
     rf('./databases/detail.json', res, "购物车数据");
 }
@@ -257,3 +259,22 @@ function staticBandle(req, res, url) {
         res.end()
     })
 }
+
+// function setID(req, res, ajaxData) {
+//     fs.readFile("./databases/detail.json", "utf-8", (err, data) => {
+//         let obj = {};
+//         let d = JSON.parse(data);
+//         for (let i of d) {
+//             i.ID = (Math.random() * Date.now()).toString().slice(0, 7)
+//         }
+
+//         fs.writeFile("./databases/detail.json", JSON.stringify(d), err => {
+//             obj.code = 1;
+//             obj.title = "ssalsdfk"
+//             res.write(JSON.stringify(obj));
+//             res.end();
+
+//         })
+
+//     })
+// }

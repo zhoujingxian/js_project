@@ -46,6 +46,7 @@
                 }
             })
 
+
             this.setTime();
         }
 
@@ -97,7 +98,7 @@
                     if (idx === -1) {
                         goods.push(this.setIn())
                     } else {
-                        goods[idx].count = parseInt(goods[idx].count) + parseInt(this.oCount.value)
+                        goods[idx].count = (parseInt(goods[idx].count) + parseInt(this.oCount.value)).toString()
                     }
                     localStorage.setItem('cart', JSON.stringify(goods))
 
