@@ -8,21 +8,36 @@ require.config({
         lc: "./modules/localChange",
         ld: "./modules/localDelete",
         ap: "./modules/allPrice",
-        ac: "./modules/allCount"
+        ac: "./modules/allCount",
+        aCheck: "./modules/allCheck",
+        oCheck: "./modules/oneCheck"
     }
 });
 
-require(['jq', 'gg', 'cr', "cc", "lc", "ld", "ap", "ac"], function (_, getGoods, cartRander, countChange, localChange, localDelete, allPrice, allCount) {
+require(['jq', 'gg', 'cr', "cc", "lc", "ld", "ap", "ac", "aCheck", "oCheck"], function (_, getGoods, cartRander, countChange, localChange, localDelete, allPrice, allCount, allCheck, oneCheck) {
     const url = "http://localhost:3000/api";
     // 
     let TAG = {};
     TAG.oGoods = document.querySelector('.goods');
 
     setTimeout(() => {
-        // oSub = document.querySelector(".count_sub");
-        // oAdd = document.querySelector('.count_add');
+        TAG.oAllCheck = Array.from(document.querySelectorAll(".all_check"));
+        TAG.oneCheck = Array.from(document.querySelectorAll('.one_check'))
+        console.log(TAG.oneCheck)
 
-    }, 10);
+        TAG.oAllCheck.forEach(value => {
+            value.onclick = function () {
+                TAG.checkValue = value
+                allCheck(TAG);
+            }
+        })
+        TAG.oneCheck.forEach(value => {
+            value.onclick = function () {
+                TAG.oneValue = value;
+                oneCheck(TAG);
+            }
+        })
+    }, 100);
 
     TAG.goods = JSON.parse(localStorage.getItem('cart'));
     getGoods(url, res => {
@@ -33,7 +48,7 @@ require(['jq', 'gg', 'cr', "cc", "lc", "ld", "ap", "ac"], function (_, getGoods,
     setTimeout(() => {
         allPrice()
         allCount()
-    }, 12);
+    }, 100);
 
     TAG.oGoods.onclick = function (event) {
         const e = event || window.event;
@@ -58,22 +73,6 @@ require(['jq', 'gg', 'cr', "cc", "lc", "ld", "ap", "ac"], function (_, getGoods,
         }
     }
 
-    // function allPrice() {
-    //     let sum = 0.00;
-    //     TAG.oSubtotal.forEach(value => {
-    //         sum += Number(value.innerHTML.slice(1))
-    //     });
-    //     console.log(sum)
-    //     TAG.oPrice.innerHTML = `￥${sum.toFixed(2)}`;
-    // }
-
-    // function allCount() {
-    //     let sum = 0;
-    //     TAG.oInput.forEach(value => {
-    //         sum += parseInt(value.value)
-    //     })
-    //     TAG.oAllcount.innerHTML = `(${sum})`
-    // }
 
 
 

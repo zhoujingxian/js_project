@@ -23,7 +23,9 @@
             this.oAdd = document.querySelector('.add');
             this.oCount = document.getElementById('count')
             this.prev = 0;
+
             this.id = location.search.split("=")[1];
+
             this.url = "http://localhost:3000/api";
             this.addEvent();
             this.init();

@@ -9,7 +9,7 @@ define(() => {
         goods.forEach(value => {
             let idx = goodsData.findIndex(val => val.ID === value.id);
             str += ` <tr my_id="${value.id}">
-            <td class="w1"><input type="checkbox"></td>
+            <td class="w1"><input type="checkbox" class="one_check"></td>
             <td class="w2">
                 <img src="./images/detail/${goodsData[idx].imgM}s0.jpg" alt="">
             </td>
