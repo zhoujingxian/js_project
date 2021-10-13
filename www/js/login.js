@@ -29,6 +29,9 @@
                     that.state(value, index);
                 }
             })
+            this.oUsername.oninput = function () {
+                that.oPassword.value = "";
+            }
         }
         verSub() {
             ajax({
@@ -69,8 +72,14 @@
         successLogin(data) {
             this.oTitle.style.display = "none";
             localStorage.setItem("isLogin", "OK");
-            data.prev = this.oCheck.checked ? true : false;
-            localStorage.setItem("user", JSON.stringify(data));
+            console.log(data)
+            data.user.prev = this.oCheck.checked ? true : false;
+            localStorage.setItem("user", JSON.stringify(data.user));
+            if (data.cart) {
+                localStorage.setItem("cart", JSON.stringify(data.cart))
+            } else {
+                localStorage.setItem("cart", "")
+            }
             location.href = "../index.html";
         }
         judge() {
@@ -88,17 +97,16 @@
         }
         init() {
             if (localStorage.getItem("user")) {
-                this.storage = JSON.parse(localStorage.getItem("user"))
+                this.storage = JSON.parse(localStorage.getItem("user"));
+                console.log(this.storage)
                 this.oUsername.value = this.storage.username;
-                if (JSON.parse(localStorage.getItem("user")).prev) {
+                if (this.storage.prev) {
                     this.textShow()
                 }
             }
         }
 
         textShow() {
-
-
             this.oPassword.value = this.storage.password;
             this.oCheck.checked = "checked";
             this.oXy.checked = "checked";

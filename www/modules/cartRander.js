@@ -1,3 +1,6 @@
+/**
+ * 商品信息渲染
+ */
 define(() => {
     return function (TAG) {
         let {
@@ -14,7 +17,7 @@ define(() => {
                 <img src="./images/detail/${goodsData[idx].imgM}s0.jpg" alt="">
             </td>
             <td class="w3">
-                <p><a href=""><a href=""><i class="cf"></i><em>${goodsData[idx].brand}&nbsp;${goodsData[idx].name}(${goodsData[idx].type})</em></a></a></p>
+                <p><a href="./detail_page.html?id=${value.id}"><i class="cf"></i><em>${goodsData[idx].brand}&nbsp;${goodsData[idx].name}(${goodsData[idx].type})</em></a></p>
                 <p>规格：${goodsData[idx].specification}</p>
                 <p>厂家：${goodsData[idx].firm}</p>
             </td>

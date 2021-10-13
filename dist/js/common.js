@@ -248,6 +248,7 @@ window.onload = function () {
 
         }
     }
+    // 登录信息显示
     class UserLogin {
         constructor() {
             this.oRegister = document.querySelector('.register');
@@ -258,24 +259,12 @@ window.onload = function () {
             this.oExit = document.querySelector('.exit');
             this.oEm = document.querySelector('.sh_count')
 
+            this.url = "http://localhost:3000/api";
             this.init();
             this.addEvent()
         }
         init() {
             this.loginInit();
-
-        }
-        cartInit() {
-            let sum = 0;
-            if (localStorage.getItem('cart')) {
-                const goods = JSON.parse(localStorage.getItem("cart"));
-                goods.forEach(value => {
-                    sum += parseInt(value.count)
-                });
-            }
-
-            this.oEm.innerHTML = `(${sum})`
-
         }
         loginInit() {
             if (localStorage.getItem('isLogin') === "OK") {
@@ -288,6 +277,19 @@ window.onload = function () {
                 this.oOwn.style.display = "none";
             }
         }
+        cartInit() {
+            this.sum = 0;
+            if (localStorage.getItem('cart')) {
+                const goods = JSON.parse(localStorage.getItem("cart"));
+                goods.forEach(value => {
+                    this.sum += parseInt(value.count)
+                });
+            }
+
+            this.oEm.innerHTML = `(${this.sum})`
+
+        }
+
         addEvent() {
             const that = this;
             this.oExit.onclick = function () {
@@ -295,11 +297,23 @@ window.onload = function () {
             }
         }
         exitClick() {
+            ajax({
+                url: this.url,
+                data: {
+                    type: "setUser",
+                    data: localStorage.getItem("cart"),
+                    username: JSON.parse(localStorage.getItem('user')).username
+                }
+
+            })
+
+            localStorage.removeItem("cart");
             localStorage.setItem("isLogin", "false");
 
         }
 
     }
+
     new Common();
     new Menu();
     new UserLogin();

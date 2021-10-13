@@ -21,11 +21,13 @@
 
             this.oSub = document.querySelector('.sub');
             this.oAdd = document.querySelector('.add');
-            this.oCount = document.getElementById('count')
+            this.oCount = document.getElementById('count');
+            this.oDetBottom = Array.from(document.querySelectorAll('.det_bottom li span'));
+            this.oExpImg = document.querySelector(".img_bot");
+
             this.prev = 0;
 
             this.id = location.search.split("=")[1];
-
             this.url = "http://localhost:3000/api";
             this.addEvent();
             this.init();
@@ -130,6 +132,21 @@
         proSelect() {
             this.sImgRender();
             this.textRender();
+            this.explain();
+        }
+        explain() {
+            this.oDetBottom[0].innerHTML = this.proData.name;
+            this.oDetBottom[1].innerHTML = this.proData.brand;
+            this.oDetBottom[2].innerHTML = this.proData.english;
+            this.oDetBottom[3].innerHTML = this.proData.firm;
+
+            let str = "";
+            for (let i = 0; i < 5; i++) {
+                str += `<img src="./images/detail/${this.proData.imgM}m${i}.jpg">`
+            }
+            this.oExpImg.innerHTML = str;
+
+
         }
         // 商品文本渲染
         textRender() {

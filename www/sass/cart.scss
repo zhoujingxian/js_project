@@ -135,6 +135,19 @@ $color:(#e5e5e5 #0cb95f #fffbe9 #F2B305 #999 #e50000);
 
             }
 
+            .w3 {
+                a {
+                    &:hover em {
+                        color: nth($color, 2);
+                        text-decoration: underline;
+
+                    }
+
+
+                }
+
+            }
+
             .w5 {
                 div {
                     width: 90px;

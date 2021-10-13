@@ -1,11 +1,13 @@
+/**
+ * 单个商品的选中状态控制全选的选中状态
+ */
 define(() => {
     return function (TAG) {
         let {
-            oneValue,
             oAllCheck,
-            oneCheck
+            oOneCheck
         } = TAG;
-        if (oneCheck.some(value => value.checked === false)) {
+        if (oOneCheck.some(value => value.checked === false)) {
             oAllCheck.forEach(value => {
                 value.checked = false;
             })

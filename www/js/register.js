@@ -52,7 +52,7 @@
                     success: res => {
                         if (res.code) {
                             this.init()
-                            localStorage.setItem("user", JSON.stringify(res.data));
+                            localStorage.setItem("user", JSON.stringify(res.data.user));
                             location.href = '../login.html';
                         } else {
                             alert(res.title);

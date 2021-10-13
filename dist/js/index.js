@@ -319,7 +319,7 @@
                 this.banner_img[i].style.left = "100%"
             }
         }
-        banner_left() {
+        banner_right() {
             let i;
             if (this.bannerPrev === this.banner_img.length - 1) {
                 i = 0;
@@ -330,7 +330,7 @@
 
             this.banner_move(i, 1)
         }
-        banner_right() {
+        banner_left() {
             let i;
             if (this.bannerPrev === 0) {
                 i = this.banner_img.length - 1
@@ -381,22 +381,12 @@
         xsgSelect(data) {
             let str = "";
             for (let i of data) {
-                str += `<li><a href="./detail_page.html?id=${i.ID}"><div><img src="${i.img}" alt=""></div><h3>${i.name}</h3><div class="cont_spec">${i.specification}</div><div class="cont_pri">${i.price}</div></a></li>`
+                str += `<li><a href="./detail_page.html?id=${i.ID}"><div><img src="./images/detail/${i.imgM}m${0}.jpg" alt=""></div><h3>${i.name}</h3><div class="cont_spec">${i.specification}</div><div class="cont_pri">${i.price}</div></a></li>`
             }
             this.oXsg.innerHTML = str;
             this.oProLi = Array.from(this.oXsg.children);
-            this.addProLi();
         }
-        addProLi() {
-            this.oProLi.forEach((value, index) => {
-                value.onclick = function () {
-                    console.log(value)
 
-                    localStorage.setItem("product", value.getAttribute('my_id'))
-                    location.href = "../detail_page.html"
-                }
-            })
-        }
         // 在线问诊
         zxwz() {
             ajax({

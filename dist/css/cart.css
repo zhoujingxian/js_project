@@ -124,6 +124,10 @@
 .main .content tbody p em {
   color: #999;
 }
+.main .content tbody .w3 a:hover em {
+  color: #0cb95f;
+  text-decoration: underline;
+}
 .main .content tbody .w5 div {
   width: 90px;
   margin: 0 auto;

@@ -1,4 +1,7 @@
-define(() => {
+/**
+ * 改变单个商品的数量,同时改变商品总数
+ */
+define(["ac"], (allCount) => {
     return function (TAG) {
         let {
             target,
@@ -9,6 +12,6 @@ define(() => {
         const idx = goods.findIndex(value => value.id === id);
         goods[idx].count = num;
         localStorage.setItem("cart", JSON.stringify(goods))
-        console.log(goods)
+        allCount()
     }
 })

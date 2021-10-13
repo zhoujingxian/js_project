@@ -1,6 +1,9 @@
 const http = require('http');
 const fs = require('fs');
 const qs = require('querystring');
+const {
+    V4MAPPED
+} = require('dns');
 
 const MY_PORT = 3000;
 const MY_HOST = `http://localhost:${MY_PORT}`;
@@ -84,12 +87,37 @@ function fn(req, res, obj) {
         case 'getGoods':
             getGoods(req, res, obj);
             break;
+        case 'setUser':
+            setUser(req, res, obj);
+            break;
         default:
             error(req, res);
     }
 }
 
-
+function setUser(req, res, ajaxData) {
+    fs.readFile('./databases/user.json', 'utf-8', (err, data) => {
+        let obj = {};
+        if (err) {
+            obj.title = "用户数据读取失败";
+            res.wirte(JSON.stringify(obj));
+            res.end();
+        } else {
+            let d = JSON.parse(data);
+            const idx = d.findIndex(value => value.username === ajaxData.username);
+            d[idx].cart = JSON.parse(ajaxData.data);
+            fs.writeFile('./databases/user.json', JSON.stringify(d), err => {
+                if (err) {
+                    obj.title = "用户购物车数据存储失败";
+                } else {
+                    obj.title = "用户购物车数据存储成功";
+                }
+                // res.wirte(JSON.stringify(obj));
+                // res.end();
+            });
+        }
+    })
+}
 
 function getGoods(req, res, ajaxData) {
     rf('./databases/detail.json', res, "购物车数据");
@@ -115,17 +143,18 @@ function detail(req, res, ajaxData) {
 
 function login(req, res, ajaxData) {
     fs.readFile("./databases/user.json", "utf-8", (err, data) => {
-        const userObj = err ? [] : (data ? JSON.parse(data) : [])
+        const userObj = err ? [] : (data ? JSON.parse(data) : []);
         const obj = {};
         const idx = userObj.findIndex(value => value.username === ajaxData.username);
+
         if (idx === -1) {
             obj.code = 1;
             obj.title = "登录失败，该用户不存在！";
-            obj.data = "NOTDATA";
+            obj.data = "The user does not exist.";
             res.write(JSON.stringify(obj));
             res.end();
         } else {
-            if (userObj[idx].password === ajaxData.password) {
+            if (userObj[idx].user.password === ajaxData.password) {
                 obj.code = 0;
                 obj.title = "登录成功";
                 obj.data = userObj[idx];
@@ -151,19 +180,20 @@ function register(req, res, ajaxData) {
             res.write(JSON.stringify(obj));
             res.end();
         } else {
-            userObj.push({
+            const msg = {
                 username: ajaxData.username,
-                password: ajaxData.password,
-                phoneNumber: ajaxData.phoneNumber
-            })
-            fs.writeFile("./databases/user.json", JSON.stringify(userObj), err => {
-                obj.code = 1;
-                obj.title = "注册成功";
-                obj.data = {
+                user: {
                     username: ajaxData.username,
                     password: ajaxData.password,
                     phoneNumber: ajaxData.phoneNumber
-                };
+                },
+                cart: []
+            }
+            userObj.push(msg)
+            fs.writeFile("./databases/user.json", JSON.stringify(userObj), err => {
+                obj.code = 1;
+                obj.title = "注册成功";
+                obj.data = msg;
 
                 res.write(JSON.stringify(obj));
                 res.end();
