@@ -227,7 +227,7 @@
             }
 
             this.oProduct.innerHTML = str;
-            this.oProLi = Array.from(this.oProduct.children);
+            // this.oProLi = Array.from(this.oProduct.children);
 
         }
 

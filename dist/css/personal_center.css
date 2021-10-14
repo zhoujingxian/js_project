@@ -14,10 +14,6 @@
   color: #fff;
 }
 
-.main a:hover {
-  color: #0cb95f;
-  text-decoration: underline;
-}
 .main .main_header h3 {
   height: 60px;
   line-height: 60px;
@@ -25,10 +21,13 @@
   font-size: 16px;
   word-spacing: 2px;
 }
+.main .main_header a:hover {
+  color: #0cb95f;
+  text-decoration: underline;
+}
 .main .main_left {
   float: left;
   width: 60px;
-  height: 500px;
   text-align: center;
 }
 .main .main_left li {
@@ -57,7 +56,6 @@
   font-size: 13px;
 }
 .main .main_right {
-  height: 617px;
   overflow: hidden;
   margin-left: 100px;
   border: 1px solid #ccc;
@@ -65,7 +63,7 @@
 .main .main_right .r_header {
   float: left;
   width: 80px;
-  height: 100%;
+  height: 400px;
   background: linear-gradient(to right, #fff, #f8f8f8 20%);
   position: relative;
 }
@@ -125,8 +123,10 @@
 }
 .main .main_right .r_right {
   float: left;
+  width: 828px;
   border-left: 1px solid #e5e5e5;
-  padding: 40px;
+  padding-top: 40px;
+  padding-left: 40px;
 }
 .main .main_right .r_right li {
   height: 40px;
@@ -134,10 +134,6 @@
 }
 .main .main_right .r_right li:nth-of-type(1) {
   height: 60px;
-}
-.main .main_right .r_right li:nth-of-type(1) img {
-  width: 50px;
-  height: 50px;
 }
 .main .main_right .r_right li:nth-of-type(1) span {
   display: inline-block;
@@ -164,6 +160,10 @@
   padding-left: 10px;
   margin-left: 10px;
 }
+.main .main_right .r_right #user_msg img {
+  width: 50px;
+  height: 50px;
+}
 .main .main_right .r_right #user_pw li:nth-of-type(1) {
   font-size: 16px;
   color: #000;
@@ -173,6 +173,54 @@
 }
 .main .main_right .r_right #user_pw li:nth-of-type(3) {
   padding-left: 14px;
+}
+.main .main_right .r_right #user_pw li b {
+  color: #e16070;
+  font-size: 12px;
+  font-weight: 400;
+  padding-left: 20px;
+}
+.main .main_right .r_right #user_pw li b i {
+  position: static;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background: url(../images/index/icons.png);
+  background-position: -280px -120px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.main .main_right .r_right #history h3 {
+  font-size: 23px;
+}
+.main .main_right .r_right #history li {
+  float: left;
+  width: 175px;
+  height: 250px;
+  border: 1px solid #e5e5e5;
+  margin: 10px;
+}
+.main .main_right .r_right #history li:hover {
+  transform: translateY(-2px);
+  box-shadow: 1px 2px 1px 0px #a3a3a3;
+}
+.main .main_right .r_right #history li img {
+  text-align: center;
+  width: 100%;
+}
+.main .main_right .r_right #history li div {
+  height: 30px;
+  line-height: 30px;
+  padding-left: 20px;
+}
+.main .main_right .r_right #history li .price {
+  font-size: 18px;
+  font-weight: 600;
+  color: #e50000;
+  text-decoration: none;
+}
+.main .main_right .r_right #history li .name {
+  font-size: 18px;
 }
 .main .main_right .r_right button {
   display: inline-block;

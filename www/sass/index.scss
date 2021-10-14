@@ -989,3 +989,17 @@
 .floor span {
     font-size: 12px;
 }
+
+.back {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    background: #e5e5e5 url(../images/index/icons.png) -286px -308px;
+    border: 2px solid #d5d5d5;
+    border-radius: 5px;
+    display: none;
+
+}

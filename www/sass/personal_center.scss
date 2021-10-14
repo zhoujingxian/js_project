@@ -1,4 +1,4 @@
-$color:(#0cb95f #0aa454 #e5e5e5 #fafafa);
+$color:(#0cb95f #0aa454 #e5e5e5 #fafafa #e50000);
 
 .navBox {
     background: nth($color, 1);
@@ -26,12 +26,7 @@ $color:(#0cb95f #0aa454 #e5e5e5 #fafafa);
 }
 
 .main {
-    a {
-        &:hover {
-            color: nth($color, 1);
-            text-decoration: underline;
-        }
-    }
+
 
     .main_header {
         h3 {
@@ -41,12 +36,19 @@ $color:(#0cb95f #0aa454 #e5e5e5 #fafafa);
             font-size: 16px;
             word-spacing: 2px;
         }
+
+        a {
+            &:hover {
+                color: nth($color, 1);
+                text-decoration: underline;
+            }
+        }
     }
 
     .main_left {
         float: left;
         width: 60px;
-        height: 500px;
+        // height: 500px;
         text-align: center;
 
         li {
@@ -90,7 +92,7 @@ $color:(#0cb95f #0aa454 #e5e5e5 #fafafa);
     }
 
     .main_right {
-        height: 617px;
+        // height: 617px;
         overflow: hidden;
         margin-left: 100px;
         border: 1px solid #ccc;
@@ -98,7 +100,7 @@ $color:(#0cb95f #0aa454 #e5e5e5 #fafafa);
         .r_header {
             float: left;
             width: 80px;
-            height: 100%;
+            height: 400px;
             background: linear-gradient(to right, #fff, #f8f8f8 20%);
             position: relative;
 
@@ -170,8 +172,13 @@ $color:(#0cb95f #0aa454 #e5e5e5 #fafafa);
 
         .r_right {
             float: left;
+            width: 828px;
             border-left: 1px solid nth($color, 3);
-            padding: 40px;
+
+            padding: {
+                top: 40px;
+                left: 40px;
+            }
 
             li {
                 height: 40px;
@@ -179,12 +186,6 @@ $color:(#0cb95f #0aa454 #e5e5e5 #fafafa);
 
                 &:nth-of-type(1) {
                     height: 60px;
-
-                    img {
-                        width: 50px;
-                        height: 50px;
-
-                    }
 
                     span {
                         display: inline-block;
@@ -220,6 +221,13 @@ $color:(#0cb95f #0aa454 #e5e5e5 #fafafa);
                 }
             }
 
+            #user_msg {
+                img {
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+
             #user_pw {
                 li {
                     &:nth-of-type(1) {
@@ -234,6 +242,68 @@ $color:(#0cb95f #0aa454 #e5e5e5 #fafafa);
 
                     &:nth-of-type(3) {
                         padding-left: 14px;
+                    }
+
+                    b {
+                        color: #e16070;
+                        font-size: 12px;
+                        font-weight: 400;
+                        padding-left: 20px;
+
+                        i {
+                            position: static;
+                            display: inline-block;
+                            width: 15px;
+                            height: 15px;
+                            background: url(../images/index/icons.png);
+                            background-position: -280px -120px;
+                            vertical-align: middle;
+                            margin-right: 5px;
+                        }
+                    }
+                }
+            }
+
+            #history {
+                h3 {
+                    font-size: 23px;
+                    // color: #333;
+                }
+
+                li {
+                    float: left;
+                    width: 175px;
+                    height: 250px;
+                    border: 1px solid nth($color, 3);
+                    margin: 10px;
+
+                    &:hover {
+                        transform: translateY(-2px);
+                        box-shadow: 1px 2px 1px 0px rgb(163, 163, 163);
+
+                    }
+
+                    img {
+                        text-align: center;
+                        width: 100%;
+                    }
+
+                    div {
+                        height: 30px;
+                        line-height: 30px;
+                        padding-left: 20px;
+                    }
+
+                    .price {
+                        font-size: 18px;
+                        font-weight: 600;
+                        color: nth($color, 5);
+                        text-decoration: none;
+                    }
+
+                    .name {
+                        font-size: 18px;
+
                     }
                 }
             }

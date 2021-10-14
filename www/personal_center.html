@@ -51,11 +51,11 @@
                     <ul>
                         <li class="left_style">基本信息</li>
                         <li>修改密码</li>
-
+                        <li>我的足迹</li>
                     </ul>
                 </div>
                 <div class="r_right">
-                    <ul style="display: none;" id="user_msg">
+                    <ul id="user_msg">
                         <li>
                             <img src="./images/personal/touxiang1.png" alt="">
                             <span>修改头像</span>
@@ -67,13 +67,24 @@
                         <button id="user_save">保存</button>
                     </ul>
 
-                    <ul id="user_pw">
+                    <ul id="user_pw" style="display: none;">
                         <li>修改用户密码:</li>
                         <li>当前密码：<input type="password" id="old_pw"></li>
-                        <li>新密码：<input type="password" id="new_pw"></li>
-                        <li>确认密码：<input type="password" id="again_pw"></li>
+                        <li>新密码：<input type="password" id="new_pw" class="pw_prev"><b></b></li>
+                        <li>确认密码：<input type="password" id="again_pw" class="pw_prev"><b></b></li>
 
                         <button id="pw_save">保存</button>
+                    </ul>
+
+                    <ul id="history" style="display: none;">
+                        <h3>我的足迹</h3>
+                        <!-- <li>
+                            <a href="">
+                                <img src="./images/detail/cktm1.jpg" alt="">
+                                <div class="price">￥10.00</div>
+                                <div class="name">韦付佳 维生素片</div>
+                            </a>
+                        </li> -->
                     </ul>
                 </div>
             </div>

@@ -22,7 +22,7 @@
             this.oLinkBtn = Array.from(document.querySelectorAll(".links_header li"));
             this.oFloor = document.querySelector('.floor')
             this.oFloorLi = Array.from(document.querySelectorAll('.floor li'));
-
+            this.oBack = document.querySelector('.back')
             this.bannerPrev = 0;
             this.bannerIndex = 0;
             this.menuPrev = 0;
@@ -81,12 +81,17 @@
             // 楼层跳转
             document.onscroll = function () {
                 that.floorShow();
+                that.backShow();
             }
             this.oFloorLi.forEach((value, index) => {
                 value.onclick = function () {
                     that.floorClick(value, index);
                 }
             })
+
+            this.oBack.onclick = function () {
+                that.backTop();
+            }
         }
         init() {
             this.xsg();
@@ -100,6 +105,19 @@
             this.eva();
             this.link();
             this.floorInit();
+        }
+        backTop() {
+            move(document.documentElement, {
+                scrollTop: 0
+            })
+        }
+        backShow() {
+            let scr = document.documentElement.scrollTop;
+            if (scr > 1800) {
+                this.oBack.style.display = "block"
+            } else {
+                this.oBack.style.display = "none"
+            }
         }
         floorInit() {
             this.floorShow()
@@ -353,7 +371,7 @@
         }
         bannerTime() {
             this.t = setInterval(() => {
-                this.banner_left();
+                this.banner_right();
             }, 2000)
         }
         stopInterval() {

@@ -33,6 +33,24 @@
             this.init();
         }
         init() {
+            this.getSelect();
+            this.setTime();
+            this.saveHistory();
+        }
+        saveHistory() {
+            if (localStorage.getItem("history")) {
+                let historyData = JSON.parse(localStorage.getItem("history"));
+                const idx = historyData.findIndex(val => val === this.id);
+                if (idx === -1) {
+                    historyData.push(this.id);
+                    localStorage.setItem("history", JSON.stringify(historyData));
+                }
+            } else {
+                localStorage.setItem("history", JSON.stringify([this.id]))
+                console.log(localStorage.getItem("history"))
+            }
+        }
+        getSelect() {
             ajax({
                 url: this.url,
                 data: {
@@ -49,9 +67,6 @@
                     }
                 }
             })
-
-
-            this.setTime();
         }
 
 
@@ -91,11 +106,15 @@
             }
         }
         countChange(index) {
-            if (parseInt(this.oCount.value) + index > -1)
+            if (parseInt(this.oCount.value) + index > 0)
                 this.oCount.value = parseInt(this.oCount.value) + index;
         }
         buyAddClick() {
-            if (this.oCount.value !== "0") {
+            if (localStorage.getItem('isLogin') !== "OK") {
+                if (confirm("尚未登录，是否登录？")) {
+                    location.href = "../login.html";
+                }
+            } else if (this.oCount.value !== "0") {
                 let goods = JSON.parse(localStorage.getItem("cart"));
                 if (localStorage.getItem('cart')) {
                     const idx = goods.findIndex(value => value.id === this.id)

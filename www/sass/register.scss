@@ -106,10 +106,11 @@ $color:(#0cb95f #0aa454 #e5e5e5 #999 #f4f4f4 #e50000);
 
 
             div {
+                width: 785px;
                 height: 42px;
                 font-size: 14px;
                 line-height: 42px;
-                margin: 10px 0;
+                margin: 10px auto;
                 position: relative;
 
                 input {
@@ -123,7 +124,7 @@ $color:(#0cb95f #0aa454 #e5e5e5 #999 #f4f4f4 #e50000);
 
                 span {
                     display: inline-block;
-                    width: 170px;
+                    width: 77px;
                     text-align: right;
                 }
 
@@ -137,7 +138,7 @@ $color:(#0cb95f #0aa454 #e5e5e5 #999 #f4f4f4 #e50000);
                     height: 25px;
                     background: url(../images/index/icons.png);
                     top: 10px;
-                    left: 200px;
+                    left: 110px;
                 }
 
                 &:nth-of-type(1) {
@@ -178,7 +179,7 @@ $color:(#0cb95f #0aa454 #e5e5e5 #999 #f4f4f4 #e50000);
             }
 
             a {
-                display: inline-block;
+                display: block;
                 width: 320px;
                 height: 48px;
                 font-size: 18px;
@@ -186,7 +187,8 @@ $color:(#0cb95f #0aa454 #e5e5e5 #999 #f4f4f4 #e50000);
                 text-align: center;
                 line-height: 48px;
                 background: nth($color, 1);
-                margin: 20px 0 50px 190px;
+                // margin: 20px 0 50px 190px;
+                margin: 30px 0 50px 200px;
             }
         }
     }

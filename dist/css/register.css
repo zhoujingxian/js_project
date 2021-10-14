@@ -80,10 +80,11 @@
   margin-bottom: 30px;
 }
 .main .main_cont form div {
+  width: 785px;
   height: 42px;
   font-size: 14px;
   line-height: 42px;
-  margin: 10px 0;
+  margin: 10px auto;
   position: relative;
 }
 .main .main_cont form div input {
@@ -96,7 +97,7 @@
 }
 .main .main_cont form div span {
   display: inline-block;
-  width: 170px;
+  width: 77px;
   text-align: right;
 }
 .main .main_cont form div em {
@@ -108,7 +109,7 @@
   height: 25px;
   background: url(../images/index/icons.png);
   top: 10px;
-  left: 200px;
+  left: 110px;
 }
 .main .main_cont form div:nth-of-type(1) > i {
   background-position: -391px -109px;
@@ -135,7 +136,7 @@
   margin-right: 5px;
 }
 .main .main_cont form a {
-  display: inline-block;
+  display: block;
   width: 320px;
   height: 48px;
   font-size: 18px;
@@ -143,7 +144,7 @@
   text-align: center;
   line-height: 48px;
   background: #0cb95f;
-  margin: 20px 0 50px 190px;
+  margin: 30px 0 50px 200px;
 }
 
 .footer {

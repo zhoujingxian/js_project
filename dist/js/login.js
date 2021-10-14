@@ -15,7 +15,7 @@
             // this.emailReg = /^[a-z\d]([\da-z][-_\.]?)+@([a-z\d][-\.]?)+$/i;
             // this.phoneReg = /^1[3-9]\d{9}$/;
             this.url = "http://localhost:3000/api";
-            this.goods = JSON.parse(localStorage.getItem('user'));
+            this.goods = localStorage.getItem("user") ? JSON.parse(localStorage.getItem('user')) : [];
             this.init();
             this.addEvent();
         }
@@ -72,6 +72,7 @@
 
         }
         verSub() {
+            console.log(this.goods)
             ajax({
                 url: this.url,
                 data: {
@@ -113,7 +114,7 @@
             if (localStorage.getItem("user")) {
                 this.storage = JSON.parse(localStorage.getItem("user"));
                 this.oUsername.value = this.storage.username;
-                if (this.storage.prev) {
+                if (this.storage.prev === "true") {
                     this.textShow()
                 }
             }

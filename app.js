@@ -1,9 +1,6 @@
 const http = require('http');
 const fs = require('fs');
 const qs = require('querystring');
-// const {
-//     V4MAPPED
-// } = require('dns');
 
 const MY_PORT = 3000;
 const MY_HOST = `http://localhost:${MY_PORT}`;
@@ -90,9 +87,84 @@ function fn(req, res, obj) {
         case 'setUser':
             setUser(req, res, obj);
             break;
+        case 'changePassword':
+            changePassword(req, res, obj);
+            break;
+        case 'history':
+            history(req, res, obj);
+            break;
         default:
             error(req, res);
     }
+}
+
+function history(req, res, ajaxData) {
+    fs.readFile("./databases/detail.json", "utf-8", (err, data) => {
+        let obj = {};
+        if (err) {
+            obj.code = 1;
+            obj.title = "历史记录数据获取失败",
+                obj.data = {}
+        } else {
+            let msg = [];
+            let idx;
+            const d = JSON.parse(data)
+            if (ajaxData.idData) {
+                for (let i of JSON.parse(ajaxData.idData)) {
+                    idx = d.findIndex(val => val.ID === i);
+                    msg.push({
+                        name: d[idx].name,
+                        brand: d[idx].brand,
+                        imgM: d[idx].imgM,
+                        price: d[idx].price
+                    });
+                }
+            }
+            obj.code = 0;
+            obj.title = "历史记录数据获取成功";
+            obj.data = msg;
+        }
+        res.write(JSON.stringify(obj))
+        res.end();
+    })
+}
+
+function changePassword(req, res, ajaxData) {
+    fs.readFile("./databases/user.json", "utf-8", (err, data) => {
+        let obj = {};
+
+        if (err) {
+            obj.code = 1;
+            obj.title = "用户信息获取失败";
+            obj.data = "NOTFOUND";
+            res.write(JSON.stringify(obj));
+            res.end();
+        } else {
+            let d = JSON.parse(data);
+            const idx = d.findIndex(val => val.username === ajaxData.username);
+
+            if (d[idx].password !== ajaxData.password) {
+                obj.code = 1;
+                obj.title = "密码不正确，请重试！";
+                obj.data = "Incorrect password"
+            } else {
+                d[idx].password = ajaxData.newPassword;
+                fs.writeFile("./databases/user.json", JSON.stringify(d), err => {
+                    if (err) {
+                        obj.code = 2;
+                        obj.title = "修改密码失败，请重试！"
+                        obj.data = "Password change failure";
+                    } else {
+                        obj.code = 0;
+                        obj.title = "成功修改密码";
+                        obj.data = "Password Changed Successfully";
+                    }
+                    res.write(JSON.stringify(obj));
+                    res.end();
+                });
+            }
+        }
+    })
 }
 
 function setUser(req, res, ajaxData) {
@@ -153,25 +225,19 @@ function login(req, res, ajaxData) {
             res.write(JSON.stringify(obj));
             res.end();
         } else {
-            console.log(ajaxData.prev)
-            console.log("======")
-            if (ajaxData.prev === "true") {
+            if (ajaxData.prev && ajaxData.prev === "true") {
                 obj.code = 0;
                 obj.title = "登录成功123";
                 obj.data = userObj[idx];
             } else if (userObj[idx].password === ajaxData.password) {
-                console.log(userObj[idx].password);
-                console.log(ajaxData.password)
                 obj.code = 0;
                 obj.title = "登录成功767";
                 obj.data = userObj[idx];
             } else {
-                console.log(1231232123)
                 obj.code = 2;
                 obj.title = "登录失败，密码不正确！";
                 obj.data = "Incorrect Password";
             }
-            console.log(obj)
             res.write(JSON.stringify(obj));
             res.end();
         }

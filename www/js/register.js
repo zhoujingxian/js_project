@@ -117,6 +117,7 @@
                     this.mistake(this.oPw, "请输入您的登录密码，6-20位数字和字符组合")
                     this.notSign(this.oPw)
                 }
+                this.pwCompare()
 
             } else {
                 this.mistake(this.oPw, "请输入密码！")
@@ -129,14 +130,15 @@
             }
         }
         pwCompare() {
-            if (this.oPw.value === this.oAgain.value) {
-                this.correct(this.oAgain);
-                this.sign(this.oAgain)
-            } else {
-                this.mistake(this.oAgain, "与密码不符合");
-                this.notSign(this.oAgain)
+            if (this.oAgain.value)
+                if (this.oPw.value === this.oAgain.value) {
+                    this.correct(this.oAgain);
+                    this.sign(this.oAgain)
+                } else {
+                    this.mistake(this.oAgain, "与密码不符合");
+                    this.notSign(this.oAgain)
 
-            }
+                }
         }
         sign(value) {
             value.setAttribute("my_sign", "true");
