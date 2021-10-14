@@ -67,11 +67,16 @@
   width: 80px;
   height: 100%;
   background: linear-gradient(to right, #fff, #f8f8f8 20%);
+  position: relative;
 }
 .main .main_right .r_header .rh_nav {
   width: 50px;
   height: 50px;
   background: url(../images/personal/iconliaobiao.png) right 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .main .main_right .r_cont {
   float: left;
@@ -116,6 +121,7 @@
   height: 30px;
   text-align: right;
   padding-right: 10px;
+  cursor: pointer;
 }
 .main .main_right .r_right {
   float: left;
@@ -149,4 +155,32 @@
   font-size: 14px;
   margin-top: 20px span;
   margin-top-margin-left: 10px;
+}
+.main .main_right .r_right li:nth-of-type(n+2) input {
+  width: 130px;
+  height: 25px;
+  border: 1px solid #ccc;
+  background: #fafafa;
+  padding-left: 10px;
+  margin-left: 10px;
+}
+.main .main_right .r_right #user_pw li:nth-of-type(1) {
+  font-size: 16px;
+  color: #000;
+}
+.main .main_right .r_right #user_pw li:nth-of-type(n+2) {
+  margin-left: 20px;
+}
+.main .main_right .r_right #user_pw li:nth-of-type(3) {
+  padding-left: 14px;
+}
+.main .main_right .r_right button {
+  display: inline-block;
+  width: 80px;
+  height: 30px;
+  background: linear-gradient(to bottom, #f8fff4, #c8f0ac);
+  border: 1px solid #0aa454;
+  border-radius: 3px;
+  margin-top: 20px;
+  margin-left: 60px;
 }

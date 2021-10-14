@@ -50,20 +50,30 @@
                 <div class="r_left">
                     <ul>
                         <li class="left_style">基本信息</li>
-                        <li>地址管理</li>
                         <li>修改密码</li>
-                        <li>实名认证</li>
 
                     </ul>
                 </div>
                 <div class="r_right">
-                    <ul>
+                    <ul style="display: none;" id="user_msg">
                         <li>
                             <img src="./images/personal/touxiang1.png" alt="">
                             <span>修改头像</span>
                         </li>
                         <li>用户名：<span class="user_name"></span></li>
-                        <li>手机：<span class="user_phone"></span></li>
+                        <li>手机：<input type="text" class="user_phone" maxlength="11"></li>
+                        <li>电子信箱：<input type="text" value=""></li>
+                        <li>QQ: <input type="text"></li>
+                        <button id="user_save">保存</button>
+                    </ul>
+
+                    <ul id="user_pw">
+                        <li>修改用户密码:</li>
+                        <li>当前密码：<input type="password" id="old_pw"></li>
+                        <li>新密码：<input type="password" id="new_pw"></li>
+                        <li>确认密码：<input type="password" id="again_pw"></li>
+
+                        <button id="pw_save">保存</button>
                     </ul>
                 </div>
             </div>

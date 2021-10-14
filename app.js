@@ -1,9 +1,9 @@
 const http = require('http');
 const fs = require('fs');
 const qs = require('querystring');
-const {
-    V4MAPPED
-} = require('dns');
+// const {
+//     V4MAPPED
+// } = require('dns');
 
 const MY_PORT = 3000;
 const MY_HOST = `http://localhost:${MY_PORT}`;
@@ -146,7 +146,6 @@ function login(req, res, ajaxData) {
         const userObj = err ? [] : (data ? JSON.parse(data) : []);
         const obj = {};
         const idx = userObj.findIndex(value => value.username === ajaxData.username);
-
         if (idx === -1) {
             obj.code = 1;
             obj.title = "登录失败，该用户不存在！";
@@ -154,15 +153,25 @@ function login(req, res, ajaxData) {
             res.write(JSON.stringify(obj));
             res.end();
         } else {
-            if (userObj[idx].user.password === ajaxData.password) {
+            console.log(ajaxData.prev)
+            console.log("======")
+            if (ajaxData.prev === "true") {
                 obj.code = 0;
-                obj.title = "登录成功";
+                obj.title = "登录成功123";
+                obj.data = userObj[idx];
+            } else if (userObj[idx].password === ajaxData.password) {
+                console.log(userObj[idx].password);
+                console.log(ajaxData.password)
+                obj.code = 0;
+                obj.title = "登录成功767";
                 obj.data = userObj[idx];
             } else {
+                console.log(1231232123)
                 obj.code = 2;
                 obj.title = "登录失败，密码不正确！";
                 obj.data = "Incorrect Password";
             }
+            console.log(obj)
             res.write(JSON.stringify(obj));
             res.end();
         }
@@ -182,10 +191,11 @@ function register(req, res, ajaxData) {
         } else {
             const msg = {
                 username: ajaxData.username,
+                password: ajaxData.password,
                 user: {
                     username: ajaxData.username,
-                    password: ajaxData.password,
-                    phoneNumber: ajaxData.phoneNumber
+                    phoneNumber: ajaxData.phoneNumber,
+                    prev: ajaxData.prev
                 },
                 cart: []
             }

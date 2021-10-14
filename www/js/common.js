@@ -197,7 +197,6 @@ window.onload = function () {
             this.oMenu2.style.display = "none"
 
         }
-        menu
         // 菜单栏推荐商家
         merchant() {
             ajax({

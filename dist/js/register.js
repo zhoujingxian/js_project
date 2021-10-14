@@ -47,7 +47,8 @@
                         type: "register",
                         username: this.oName.value,
                         password: this.oPw.value,
-                        phoneNumber: this.oPhone.value
+                        phoneNumber: this.oPhone.value,
+                        prev: false
                     },
                     success: res => {
                         if (res.code) {

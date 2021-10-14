@@ -1,4 +1,4 @@
-$color:(#0cb95f #0aa454 #e5e5e5);
+$color:(#0cb95f #0aa454 #e5e5e5 #fafafa);
 
 .navBox {
     background: nth($color, 1);
@@ -100,11 +100,16 @@ $color:(#0cb95f #0aa454 #e5e5e5);
             width: 80px;
             height: 100%;
             background: linear-gradient(to right, #fff, #f8f8f8 20%);
+            position: relative;
 
             .rh_nav {
                 width: 50px;
                 height: 50px;
                 background: url(../images/personal/iconliaobiao.png) right 0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
             }
         }
 
@@ -158,7 +163,8 @@ $color:(#0cb95f #0aa454 #e5e5e5);
             li {
                 height: 30px;
                 text-align: right;
-                padding-right: 10px
+                padding-right: 10px;
+                cursor: pointer;
             }
         }
 
@@ -202,7 +208,46 @@ $color:(#0cb95f #0aa454 #e5e5e5);
                         margin-left: 10px;
 
                     }
+
+                    input {
+                        width: 130px;
+                        height: 25px;
+                        border: 1px solid #ccc;
+                        background: nth($color, 4);
+                        padding-left: 10px;
+                        margin-left: 10px;
+                    }
                 }
+            }
+
+            #user_pw {
+                li {
+                    &:nth-of-type(1) {
+                        font-size: 16px;
+                        color: #000;
+
+                    }
+
+                    &:nth-of-type(n+2) {
+                        margin-left: 20px;
+                    }
+
+                    &:nth-of-type(3) {
+                        padding-left: 14px;
+                    }
+                }
+            }
+
+            button {
+                display: inline-block;
+                width: 80px;
+                height: 30px;
+                background: linear-gradient(to bottom, #f8fff4, #c8f0ac);
+                border: 1px solid nth($color, 2);
+                border-radius: 3px;
+                margin-top: 20px;
+                margin-left: 60px;
+
             }
         }
 

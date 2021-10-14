@@ -1,8 +1,8 @@
 [{
     "username": "admin1",
+    "password": "123123",
     "user": {
         "username": "admin1",
-        "password": "123123",
         "phoneNumber": "13144564568"
     },
     "cart": [{
@@ -11,9 +11,9 @@
     }]
 }, {
     "username": "admin2",
+    "password": "123123",
     "user": {
         "username": "admin2",
-        "password": "123123",
         "phoneNumber": "13144564568"
     },
     "cart": [{
@@ -22,9 +22,9 @@
     }]
 }, {
     "username": "admin3",
+    "password": "123123",
     "user": {
         "username": "admin3",
-        "password": "123123",
         "phoneNumber": "13144564565"
     },
     "cart": [{
@@ -42,13 +42,30 @@
     }]
 }, {
     "username": "admin5",
+    "password": "123123",
     "user": {
         "username": "admin5",
-        "password": "123123",
         "phoneNumber": "13145678990"
     },
     "cart": [{
         "id": "9343730",
         "count": "4"
     }]
+}, {
+    "username": "admin4",
+    "password": "123123",
+    "user": {
+        "username": "admin4",
+        "phoneNumber": "13144564565"
+    },
+    "cart": []
+}, {
+    "username": "admin6",
+    "password": "123123",
+    "user": {
+        "username": "admin6",
+        "phoneNumber": "13145678990",
+        "prev": "false"
+    },
+    "cart": []
 }]
