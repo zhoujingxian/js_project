@@ -4,10 +4,10 @@
 define(["ap", "ac"], (allPrice, allCount) => {
     return function (TAG) {
         const {
-            oneCheck,
+            oOneCheck,
             oAllCheck
         } = TAG;
-        oneCheck.forEach(value => {
+        oOneCheck.forEach(value => {
             if (value.checked) {
                 const idx = TAG.goods.findIndex(val => val.ID === value.parentNode.parentNode.getAttribute("my_id"));
                 TAG.goods.splice(idx, 1);
@@ -19,8 +19,8 @@ define(["ap", "ac"], (allPrice, allCount) => {
                 })
             }
         })
-        allPrice();
-        allCount();
+        allPrice(TAG);
+        allCount(TAG);
         localStorage.setItem("cart", JSON.stringify(TAG.goods))
 
 

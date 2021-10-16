@@ -114,7 +114,7 @@
             if (localStorage.getItem("user")) {
                 this.storage = JSON.parse(localStorage.getItem("user"));
                 this.oUsername.value = this.storage.username;
-                if (this.storage.prev === "true") {
+                if (this.storage.prev === true) {
                     this.textShow()
                 }
             }

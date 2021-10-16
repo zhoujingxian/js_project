@@ -306,7 +306,9 @@ window.onload = function () {
 
             })
 
-            localStorage.removeItem("cart");
+            // localStorage.removeItem("cart");
+            localStorage.setItem("cart", "[]");
+            localStorage.removeItem("history")
             localStorage.setItem("isLogin", "false");
 
         }

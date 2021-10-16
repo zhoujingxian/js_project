@@ -94,7 +94,7 @@
                     success: res => {
                         if (res.code) {
                             console.log(res.title);
-                            this.losePassword();
+                            this.losePassword(res.title);
                         } else {
                             console.log(res.title);
                             this.successPassword();
@@ -109,12 +109,13 @@
             let goods = JSON.parse(localStorage.getItem('user'));
             goods.prev = false;
             localStorage.setItem("user", JSON.stringify(goods));
-            localStorage.removeItem("cart");
+            localStorage.setItem("cart", JSON.stringify([]));
             document.querySelector('.exit').click();
             location.href = "./login.html";
         }
-        losePassword() {
+        losePassword(title) {
             this.oldPw.value = "";
+            alert(title)
         }
         pwInput() {
             const a = /\d/.test(this.newPw.value) ? 1 : 0;

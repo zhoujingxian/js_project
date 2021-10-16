@@ -5,7 +5,7 @@ function move(ele, data, callback) {
         let flag = true;
         for (let i in data) {
             const now = arr.includes(i) ? Math.ceil(ele[i]) : parseInt(getStyle(ele, i));
-            let speed = (data[i] - now) / 7;
+            let speed = (data[i] - now) / 5;
             speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
             arr.includes(i) ? ele[i] = now + speed : ele.style[i] = now + speed + 'px';
 

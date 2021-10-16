@@ -82,6 +82,7 @@
             document.onscroll = function () {
                 that.floorShow();
                 that.backShow();
+
             }
             this.oFloorLi.forEach((value, index) => {
                 value.onclick = function () {
@@ -452,23 +453,24 @@
                         console.log(res.title);
                         this.productData = res.data;
                     }
+                    ajax({
+                        url: this.url,
+                        data: {
+                            type: "brand"
+                        },
+                        success: res => {
+                            if (res.code) {
+                                console.log(res.title);
+                            } else {
+                                console.log(res.title);
+                                this.brandData = res.data;
+                                this.proPrepare()
+                            }
+                        }
+                    })
                 }
             })
-            ajax({
-                url: this.url,
-                data: {
-                    type: "brand"
-                },
-                success: res => {
-                    if (res.code) {
-                        console.log(res.title);
-                    } else {
-                        console.log(res.title);
-                        this.brandData = res.data;
-                        this.proPrepare()
-                    }
-                }
-            })
+
         }
         proPrepare() {
             this.oProDiv.forEach((value, index) => {

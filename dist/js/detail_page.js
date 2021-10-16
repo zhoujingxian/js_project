@@ -128,7 +128,7 @@
                 } else {
                     localStorage.setItem('cart', JSON.stringify([this.setIn()]))
                 }
-                this.oCount.value = 0;
+                this.oCount.value = 1;
                 let s = 0;
                 goods.forEach(value => {
                     s += parseInt(value.count)

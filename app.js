@@ -132,7 +132,6 @@ function history(req, res, ajaxData) {
 function changePassword(req, res, ajaxData) {
     fs.readFile("./databases/user.json", "utf-8", (err, data) => {
         let obj = {};
-
         if (err) {
             obj.code = 1;
             obj.title = "用户信息获取失败";
@@ -146,7 +145,9 @@ function changePassword(req, res, ajaxData) {
             if (d[idx].password !== ajaxData.password) {
                 obj.code = 1;
                 obj.title = "密码不正确，请重试！";
-                obj.data = "Incorrect password"
+                obj.data = "Incorrect password";
+                res.write(JSON.stringify(obj));
+                res.end();
             } else {
                 d[idx].password = ajaxData.newPassword;
                 fs.writeFile("./databases/user.json", JSON.stringify(d), err => {
@@ -227,11 +228,11 @@ function login(req, res, ajaxData) {
         } else {
             if (ajaxData.prev && ajaxData.prev === "true") {
                 obj.code = 0;
-                obj.title = "登录成功123";
+                obj.title = "登录成功";
                 obj.data = userObj[idx];
             } else if (userObj[idx].password === ajaxData.password) {
                 obj.code = 0;
-                obj.title = "登录成功767";
+                obj.title = "登录成功";
                 obj.data = userObj[idx];
             } else {
                 obj.code = 2;
