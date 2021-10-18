@@ -79,10 +79,12 @@
             })
 
             // 楼层跳转
+            document.onwheel = function () {
+                that.backShow();
+                clearInterval(document.documentElement.t);
+            }
             document.onscroll = function () {
                 that.floorShow();
-                that.backShow();
-
             }
             this.oFloorLi.forEach((value, index) => {
                 value.onclick = function () {
@@ -128,6 +130,10 @@
             move(document.documentElement, {
                 scrollTop: this.oProduct.children[index].offsetTop + this.oProduct.children[index].offsetHeight
             })
+
+            this.oFloorLi[this.floorPrev].className = ""
+            this.oFloorLi[index].className = "floor_change";
+            this.floorPrev = index;
         }
 
         // 楼层显示

@@ -34,7 +34,7 @@ clone这个地址：`https://github.com/zhoujingxian/yfw.git`
    - 三级菜单
    - 选项卡
    - 搜索下拉菜单（使用`jsonp`跨域请求）
-   - 楼层跳转（BUG:跳转过程中使用鼠标滚轮使动画无法停止）
+   - 楼层跳转
 2. 列表页
    - 分页功能
 3. 详情页
